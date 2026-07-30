@@ -50,8 +50,8 @@ export default function Header() {
                 <Image
                   src="/assets/logos/logo.png"
                   alt="AC Plumbing & Heating"
-                  width={180}
-                  height={60}
+                  width={190}
+                  height={70}
                   priority
                   className="h-[58px] lg:h-[60px] w-auto object-contain"
                 />
@@ -97,7 +97,7 @@ export default function Header() {
 
               <button
                 onClick={() => setOpen(!open)}
-                className="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg text-3xl text-[#1F2937]"
+                className="lg:hidden flex items-center justify-center w-7 h-11 rounded-lg text-3xl text-[#1F2937]"
               >
                 {open ? <IoClose /> : <HiOutlineMenuAlt3 />}
               </button>

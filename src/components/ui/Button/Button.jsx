@@ -26,13 +26,14 @@ export default function Button({
         ${className}
       `}
     >
-      <span>{children}</span>
+      <span style={{ marginLeft: '10px', color: 'white' }}>{children}</span>
 
       <span
         className="
           flex
           h-10
           w-10
+       
           items-center
           justify-center
           rounded-full
