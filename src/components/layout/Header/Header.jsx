@@ -28,8 +28,8 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 flex justify-center bg-white transition-all duration-500 ${
-          sticky ? "py-3 shadow-lg" : "py-5"
+        className={`fixed top-6 left-0 w-full z-50 flex justify-center transition-all duration-500 ${
+          sticky ? "py-3" : "py-5"
         }`}
       >
         <Container>
@@ -40,11 +40,16 @@ export default function Header() {
               h-[88px]
               px-4 lg:px-8
               rounded-2xl
-              transition-all duration-500
+              transition-all
+              duration-500
+              ${
+                sticky
+                  ? "bg-white/95 backdrop-blur-xl shadow-[0_15px_45px_rgba(0,0,0,0.08)] border border-white/30"
+                  : "bg-white/10 backdrop-blur-xl border border-white/20"
+              }
             `}
           >
-            {/* ================= Logo ================= */}
-
+            {/* Logo */}
             <div className="flex items-center flex-shrink-0">
               <Link href="/">
                 <Image
@@ -58,14 +63,17 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* ================= Navigation ================= */}
-
+            {/* Navigation */}
             <nav className="hidden lg:flex items-center justify-center gap-12">
               {navigation.map((item) => (
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="group relative text-[16px] font-medium text-[#1F2937] transition-colors duration-300 hover:text-[var(--primary)]"
+                  className={`group relative text-[16px] font-medium transition-all duration-300 ${
+                    sticky
+                      ? "text-[#1F2937] hover:text-[var(--primary)]"
+                      : "text-white hover:text-[#F4C46A]"
+                  }`}
                 >
                   {item.title}
 
@@ -86,8 +94,7 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* ================= Right Side ================= */}
-
+            {/* Right Side */}
             <div className="flex items-center justify-end flex-shrink-0 gap-4">
               <div className="hidden lg:block">
                 <Button href="/quote">
@@ -97,7 +104,9 @@ export default function Header() {
 
               <button
                 onClick={() => setOpen(!open)}
-                className="lg:hidden flex items-center justify-center w-7 h-11 rounded-lg text-3xl text-[#1F2937]"
+                className={`lg:hidden flex items-center justify-center w-10 h-10 text-3xl transition-all duration-300 ${
+                  sticky ? "text-[#1F2937]" : "text-white"
+                }`}
               >
                 {open ? <IoClose /> : <HiOutlineMenuAlt3 />}
               </button>

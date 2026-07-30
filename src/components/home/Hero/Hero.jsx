@@ -1,84 +1,194 @@
 "use client";
 
-import Image from "next/image";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { motion } from "framer-motion";
+
+import Container from "@/components/ui/Container/Container";
+import Button from "@/components/ui/Button/Button";
+
+const heroImages = [
+  "/assets/hero/hero-1.jpg",
+  "/assets/hero/hero-2.jpg",
+  "/assets/hero/hero-3.jpg",
+];
 
 export default function Hero() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroImages.length);
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-screen overflow-hidden " style={{ minHeight: "calc(100vh - 200px)", paddingTop: "200px" }}>
 
-      {/* Background */}
-      {/* <Image
-        src="/images/hero/hero-bg.jpg"
-        alt="AC Plumbing"
-        fill
-        priority
-        className="object-cover"
-      /> */}
+      {/* Background Slider */}
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0">
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            className="absolute inset-0"
+            initial={{ opacity: 0, scale: 1 }}
+            animate={{
+              opacity: 1,
+              scale: 1.08,
+            }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 7,
+            }}
+            style={{
+              backgroundImage: `url(${heroImages[current]})`,
+              backgroundSize: "cover",
+              backgroundPosition: "70% center",
+            }}
+          />
+        </AnimatePresence>
+
+        {/* Overlay */}
+
+        <div className="absolute inset-0 bg-gradient-to-r from-[#081727]/80 via-[#081727]/55 to-transparent"></div>
+
+      </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex items-center">
+<div className="relative z-20 flex justify-center h-full ">
+      <Container className="relative z-20 h-full">
 
-        <div className="max-w-3xl">
+        <div className="flex h-full items-center pt-28">
 
-          <motion.p
-            initial={{ opacity:0, y:20 }}
-            animate={{ opacity:1, y:0 }}
-            transition={{ duration:0.5 }}
-            className="uppercase tracking-[4px] text-red-500 font-semibold mb-4"
-          >
-            Welcome to AC Plumbing & Heating
-          </motion.p>
+          <div className="max-w-[680px]">
 
-          <motion.h1
-            initial={{ opacity:0, y:40 }}
-            animate={{ opacity:1, y:0 }}
-            transition={{ delay:0.2 }}
-            className="text-5xl md:text-7xl font-bold text-white leading-tight"
-          >
-            Reliable Plumbing & Heating Solutions
-          </motion.h1>
+            {/* Badge */}
 
-          <motion.p
-            initial={{ opacity:0 }}
-            animate={{ opacity:1 }}
-            transition={{ delay:0.4 }}
-            className="text-gray-200 mt-8 text-lg leading-8"
-          >
-            Residential and commercial plumbing, heating,
-            drain cleaning and emergency repair services
-            across Canada.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity:0 }}
-            animate={{ opacity:1 }}
-            transition={{ delay:0.6 }}
-            className="flex flex-wrap gap-5 mt-10"
-          >
-            <Link
-              href="/quote"
-              className="bg-red-600 px-8 py-4 rounded-lg text-white hover:bg-red-700 transition"
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: .2 }}
+              className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-xl px-5 py-2"
             >
-              Get Free Quote
-            </Link>
+              <span className="h-2.5 w-2.5 rounded-full bg-[var(--primary)]"></span>
 
-            <Link
-              href="tel:+1XXXXXXXXXX"
-              className="border border-white px-8 py-4 rounded-lg text-white hover:bg-white hover:text-black transition"
+              <span className="text-[13px] font-semibold uppercase tracking-[3px] text-white">
+                Trusted Since 2010
+              </span>
+            </motion.div>
+
+            {/* Heading */}
+
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: .35 }}
+              className="mt-8 text-[52px] md:text-[64px] lg:text-[76px] font-extrabold leading-[1.05] text-white"
             >
-              Call Now
-            </Link>
+              Professional
+              <br />
+              Plumbing &
+              <br />
+              Heating Services
+            </motion.h1>
 
-          </motion.div>
+            {/* Paragraph */}
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: .55 }}
+              className="mt-8 max-w-[620px] text-[18px] leading-9 text-white/90"
+            >
+              From emergency plumbing repairs to complete heating
+              installations, AC Plumbing & Heating delivers fast,
+              reliable and affordable solutions for residential and
+              commercial properties across Canada.
+            </motion.p>
+
+            {/* Buttons */}
+
+            <motion.div
+              initial={{ opacity: 0, y: 35 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: .75 }}
+              className="mt-10 flex flex-wrap items-center gap-6"
+            >
+              <Button href="/quote">
+                Get a Quote
+              </Button>
+
+              <Link
+                href="/services"
+                className="group inline-flex items-center gap-3 font-semibold text-white transition"
+              >
+                Explore Services
+
+                <span className="transition-transform duration-300 group-hover:translate-x-2">
+                  →
+                </span>
+              </Link>
+            </motion.div>
+
+            {/* Statistics */}
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              className="mt-16 flex flex-wrap gap-6"
+            >
+              {[
+                {
+                  number: "15+",
+                  title: "Years Experience",
+                },
+                {
+                  number: "24/7",
+                  title: "Emergency Support",
+                },
+                {
+                  number: "100%",
+                  title: "Customer Satisfaction",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="min-w-[180px] rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-7 py-6"
+                >
+                  <h3 className="text-[40px] font-bold text-white leading-none">
+                    {item.number}
+                  </h3>
+
+                  <p className="mt-3 text-[15px] tracking-wide text-white/80">
+                    {item.title}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+
+          </div>
 
         </div>
 
-      </div>
+      </Container>
+</div>
+      {/* Scroll */}
+
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{
+          repeat: Infinity,
+          duration: 2,
+        }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white text-2xl"
+      >
+        ↓
+      </motion.div>
 
     </section>
   );

@@ -1,11 +1,12 @@
-import Header from "@/components/layout/Header/Header.jsx";
+
+import Hero from "@/components/home/Hero/Hero.jsx";
 
 export default function Home() {
   return (
     <>
-     <Header/>
 
-      <div className="h-screen bg-gray-100"></div>
+
+      <Hero />
     </>
   );
 }
