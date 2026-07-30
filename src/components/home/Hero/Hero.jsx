@@ -25,7 +25,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen overflow-hidden " style={{ minHeight: "calc(100vh - 200px)", paddingTop: "200px" }}>
+    <section className="relative h-screen overflow-hidden " style={{ minHeight: "calc(100vh - 160px)", paddingTop: "160px" }}>
 
       {/* Background Slider */}
 
@@ -59,7 +59,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-<div className="relative z-20 flex justify-center h-full ">
+<div className="relative z-20 flex justify-center ">
       <Container className="relative z-20 h-full">
 
         <div className="flex h-full items-center pt-28">
