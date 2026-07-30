@@ -25,7 +25,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen overflow-hidden " style={{ minHeight: "calc(100vh - 160px)", paddingTop: "160px" }}>
+    <section className="relative h-screen overflow-hidden " style={{ minHeight: "calc(100vh - 134px)", paddingTop: "134px" }}>
 
       {/* Background Slider */}
 
@@ -72,7 +72,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: .2 }}
-              className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-xl px-5 py-2"
+              className="inline-flex items-center gap-4 rounded-full border border-white/20 bg-white/10 backdrop-blur-xl px-8 py-8" style={{padding:"6px"}}
             >
               <span className="h-2.5 w-2.5 rounded-full bg-[var(--primary)]"></span>
 
@@ -117,6 +117,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: .75 }}
               className="mt-10 flex flex-wrap items-center gap-6"
+              style={{margin:"20px" , marginLeft:"0px"}}
+             
+              
             >
               <Button href="/quote">
                 Get a Quote
@@ -125,6 +128,8 @@ export default function Hero() {
               <Link
                 href="/services"
                 className="group inline-flex items-center gap-3 font-semibold text-white transition"
+
+                style={{color:"white"}}
               >
                 Explore Services
 
@@ -159,6 +164,7 @@ export default function Hero() {
                 <div
                   key={item.title}
                   className="min-w-[180px] rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-7 py-6"
+                  style={{padding:"10px"}}
                 >
                   <h3 className="text-[40px] font-bold text-white leading-none">
                     {item.number}

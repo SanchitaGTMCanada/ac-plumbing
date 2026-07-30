@@ -69,11 +69,11 @@ export default function Header() {
                 <Link
                   key={item.title}
                   href={item.href}
-                  className={`group relative text-[16px] font-medium transition-all duration-300 ${
-                    sticky
-                      ? "text-[#1F2937] hover:text-[var(--primary)]"
-                      : "text-white hover:text-[#F4C46A]"
-                  }`}
+               className={`group relative text-[16px] font-medium transition-all duration-300 ${
+  sticky
+    ? "text-[#1F2937] hover:text-[var(--primary)]"
+    : "text-white hover:text-[#F4C46A]"
+}`}
                 >
                   {item.title}
 
