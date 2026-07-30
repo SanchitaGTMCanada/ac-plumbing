@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { TypeAnimation } from "react-type-animation";
 
 import Container from "@/components/ui/Container/Container";
 import Button from "@/components/ui/Button/Button";
@@ -23,6 +24,31 @@ export default function Hero() {
 
     return () => clearInterval(interval);
   }, []);
+
+
+  const titleContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const titleItem = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+    },
+  },
+};
+  
 
   return (
     <section className="relative h-screen overflow-hidden " style={{ minHeight: "calc(100vh - 134px)", paddingTop: "134px" }}>
@@ -83,18 +109,34 @@ export default function Hero() {
 
             {/* Heading */}
 
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: .35 }}
-              className="mt-8 text-[52px] md:text-[64px] lg:text-[76px] font-extrabold leading-[1.05] text-white"
-            >
-              Professional
-              <br />
-              Plumbing &
-              <br />
-              Heating Services
-            </motion.h1>
+<motion.h1
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+ className="mt-8 text-[52px] md:text-[64px] lg:text-[76px] font-semibold leading-[1.05] tracking-[-2px] text-white"
+>
+  <span className="text-white">
+    Professional
+    <br />
+  </span>
+
+  <TypeAnimation
+    sequence={[
+      "Plumbing Services",
+      2500,
+      "Heating Solutions",
+      2500,
+      "Emergency Repairs",
+      2500,
+      "Drain Cleaning",
+      2500,
+    ]}
+    wrapper="span"
+    speed={45}
+    repeat={Infinity}
+    className="text-[#F4C46A]"
+  />
+</motion.h1>
 
             {/* Paragraph */}
 
