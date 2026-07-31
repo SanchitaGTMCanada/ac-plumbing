@@ -1,30 +1,30 @@
 import {
-  FaCheckCircle,
-  FaClock,
   FaShieldAlt,
-  FaTools,
+  FaBolt,
+  FaHome,
+  FaHandshake,
 } from "react-icons/fa";
 
 const aboutFeatures = [
   {
-    icon: FaCheckCircle,
-    title: "Licensed Professionals",
-    text: "Certified technicians delivering quality workmanship.",
-  },
-  {
-    icon: FaClock,
-    title: "24/7 Emergency Service",
-    text: "Always available whenever you need immediate help.",
-  },
-  {
     icon: FaShieldAlt,
-    title: "Transparent Pricing",
-    text: "No hidden costs. Honest and upfront quotations.",
+    title: "Licensed & Insured",
+    text: "Certified experts providing safe, reliable and code-compliant plumbing solutions.",
   },
   {
-    icon: FaTools,
-    title: "Modern Equipment",
-    text: "Latest tools for faster and cleaner installations.",
+    icon: FaBolt,
+    title: "24/7 Emergency Response",
+    text: "Rapid emergency plumbing and heating services whenever you need us.",
+  },
+  {
+    icon: FaHome,
+    title: "Residential & Commercial",
+    text: "Complete plumbing and heating services for homes, offices and businesses.",
+  },
+  {
+    icon: FaHandshake,
+    title: "Honest Pricing",
+    text: "Transparent estimates with no hidden fees and guaranteed workmanship.",
   },
 ];
 
