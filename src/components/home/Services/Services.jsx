@@ -16,7 +16,7 @@ export default function Services() {
       <div className="absolute -right-52 bottom-0 h-[520px] w-[520px] rounded-full bg-[#C89B3C]/10 blur-[170px]" />
 
 
-<div className="relative z-20 flex justify-center ">
+<div className="relative z-20 flex justify-center "  >
     <Container>
 
         <ServicesContent />
@@ -31,7 +31,7 @@ export default function Services() {
 
           <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-24 bg-gradient-to-l from-[#F7F9FC] to-transparent" />
 
-          <InfiniteMarquee services={services} />
+          <InfiniteMarquee services={services}  />
 
         </div>
 

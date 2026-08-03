@@ -2,7 +2,7 @@ import Button from "@/components/ui/Button/Button";
 
 export default function ServicesContent() {
   return (
-    <div className="mx-auto mb-20 mt-60 text-center">
+    <div className="mx-auto mb-20 mt-60 text-center" style={{marginTop:"50px"}}>
 
       <span className="inline-flex rounded-full bg-[#123B67]/10 px-6 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#123B67]" style={{ padding:"10px", marginTop:"10px" }}>
         Our Services

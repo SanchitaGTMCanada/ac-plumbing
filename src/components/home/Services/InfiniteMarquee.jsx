@@ -72,6 +72,8 @@ export default function InfiniteMarquee({ services }) {
       "
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
+
+    
     >
 
       <div
@@ -82,6 +84,8 @@ export default function InfiniteMarquee({ services }) {
           gap-8
           will-change-transform
         "
+
+          style={{marginBottom:"70px"}}
       >
 
         {items.map((service,index)=>(

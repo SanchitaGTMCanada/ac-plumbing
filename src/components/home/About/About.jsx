@@ -47,7 +47,7 @@ export default function About() {
 
 
       {/* ================= Content ================= */}
-<div className="relative z-20 flex justify-center ">
+<div className="relative z-20 flex justify-center " >
       <Container>
 
         <div className="grid items-center gap-24 lg:grid-cols-2">

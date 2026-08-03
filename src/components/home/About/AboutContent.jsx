@@ -33,7 +33,7 @@ const features = [
 
 export default function AboutContent() {
   return (
-    <div className="max-w-[620px]" style={{marginTop:"20px"}}>
+    <div className="max-w-[620px]" style={{marginTop:"60px", marginBottom:"60px"}}>
 
       {/* Badge */}
 
