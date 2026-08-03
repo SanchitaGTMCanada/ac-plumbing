@@ -31,13 +31,15 @@ export default function Header() {
         className={`fixed top-6 left-0 w-full z-50 flex justify-center transition-all duration-500 ${
           sticky ? "py-3" : "py-5"
         }`}
+
+      
       >
         <Container>
           <div
             className={`
               flex items-center justify-between
-              lg:grid lg:grid-cols-[180px_1fr_220px]
-              h-[88px]
+              lg:grid lg:grid-cols-[380px_1fr_260px]
+              min-h-[120px]
               px-4 lg:px-8
               rounded-2xl
               transition-all
@@ -48,17 +50,30 @@ export default function Header() {
                   : "bg-white/10 backdrop-blur-xl border border-white/20"
               }
             `}
+
+            style={{paddingLeft:"20px", paddingRight:"20px"}}
           >
             {/* Logo */}
-            <div className="flex items-center flex-shrink-0">
-              <Link href="/">
+            <div className="flex h-full items-center flex-shrink-0">
+              <Link
+                href="/"
+                className="flex h-full items-center justify-center"
+              >
                 <Image
                   src="/assets/logos/logo.png"
                   alt="AC Plumbing & Heating"
-                  width={190}
-                  height={70}
+                  width={500}
+                  height={200}
                   priority
-                  className="h-[58px] lg:h-[60px] w-auto object-contain"
+                  className="
+                    h-[100px]
+                    lg:h-[110px]
+                    xl:h-[120px]
+                    w-auto
+                    object-contain
+                    transition-all
+                    duration-300
+                  "
                 />
               </Link>
             </div>
@@ -69,10 +84,10 @@ export default function Header() {
                 <Link
                   key={item.title}
                   href={item.href}
-               className={`group relative text-[16px] font-medium transition-all duration-300 ${
+                 className={`group relative text-[16px] font-medium transition-all duration-300 ${
   sticky
-    ? "text-[#1F2937] hover:text-[var(--primary)]"
-    : "text-white hover:text-[#F4C46A]"
+    ? "text-[#123B67] hover:text-[var(--primary)]"
+    : "!text-white hover:!text-[#F4C46A]"
 }`}
                 >
                   {item.title}
@@ -97,9 +112,7 @@ export default function Header() {
             {/* Right Side */}
             <div className="flex items-center justify-end flex-shrink-0 gap-4">
               <div className="hidden lg:block">
-                <Button href="/quote">
-                  Get a Quote
-                </Button>
+                <Button href="/quote">Book Now</Button>
               </div>
 
               <button

@@ -51,7 +51,7 @@ const titleItem = {
   
 
   return (
-    <section className="relative h-screen overflow-hidden " style={{ minHeight: "calc(100vh - 134px)", paddingTop: "134px" }}>
+    <section className="relative h-screen overflow-hidden " style={{ minHeight: "calc(100vh - 160px)", paddingTop: "160px" }}>
 
       {/* Background Slider */}
 
@@ -85,7 +85,7 @@ const titleItem = {
       </div>
 
       {/* Content */}
-<div className="relative z-20 flex justify-center ">
+<div className="relative z-20 flex justify-center " >
       <Container className="relative z-20 h-full">
 
         <div className="flex h-full items-center pt-28">

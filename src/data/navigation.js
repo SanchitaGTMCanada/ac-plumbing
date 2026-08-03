@@ -1,8 +1,8 @@
 const navigation = [
-  { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
+  // { title: "Home", href: "/" },
+  { title: "About Us", href: "/about" },
   { title: "Services", href: "/services" },
-  { title: "Projects", href: "/projects" },
+  // { title: "Projects", href: "/projects" },
   { title: "Contact", href: "/contact" },
 ];
 
