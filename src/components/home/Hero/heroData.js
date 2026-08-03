@@ -9,7 +9,7 @@ Across Canada`,
     "From emergency plumbing repairs to complete heating system installations, AC Plumbing & Heating delivers fast, reliable and affordable services for residential and commercial properties.",
 
   primaryBtn: {
-    text: "Get a Quote",
+    text: "Book Now",
     link: "/quote",
   },
 

@@ -164,7 +164,7 @@ const titleItem = {
               
             >
               <Button href="/quote">
-                Get a Quote
+                Book Now
               </Button>
 
               <Link
@@ -191,9 +191,9 @@ const titleItem = {
             >
               {[
                 {
-                  number: "15+",
-                  title: "Years Experience",
-                },
+  number: "20+",
+  title: "Service Areas"
+},
                 {
                   number: "24/7",
                   title: "Emergency Support",
