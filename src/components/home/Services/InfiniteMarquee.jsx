@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "./ServiceCard.jsx";
 
 export default function InfiniteMarquee({ services }) {
   const trackRef = useRef(null);
