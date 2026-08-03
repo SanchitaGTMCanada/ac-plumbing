@@ -12,67 +12,168 @@ const features = [
   {
     icon: FaShieldAlt,
     title: "Licensed Professionals",
-    desc: "Certified plumbing experts delivering reliable workmanship.",
+    desc: "Certified plumbing experts delivering reliable workmanship with industry-leading standards.",
   },
   {
     icon: FaBolt,
-    title: "Emergency Service",
-    desc: "Fast response whenever urgent repairs are needed.",
+    title: "24/7 Emergency Service",
+    desc: "Fast emergency response whenever urgent plumbing or heating issues arise.",
   },
   {
     icon: FaHome,
     title: "Residential & Commercial",
-    desc: "Complete plumbing and heating solutions for every property.",
+    desc: "Complete plumbing and heating solutions tailored for homes and businesses.",
   },
   {
     icon: FaHandshake,
     title: "Transparent Pricing",
-    desc: "Upfront quotations with absolutely no hidden costs.",
+    desc: "Honest quotations with no hidden charges, backed by quality service.",
   },
 ];
 
 export default function AboutContent() {
   return (
-    <div>
+    <div className="max-w-[620px]" style={{marginTop:"20px"}}>
 
-      <span className="inline-flex rounded-full border border-[#C89B3C] px-5 py-2 text-sm font-semibold tracking-wide text-[#C89B3C]">
-        ABOUT AC PLUMBING
+      {/* Badge */}
+
+      <span
+        className="
+          inline-flex
+          items-center
+          rounded-full
+          border
+          border-[#C89B3C]/30
+          bg-[#C89B3C]/10
+          px-5
+          py-2
+          text-[13px]
+          font-medium
+          uppercase
+          tracking-[0.22em]
+          text-[#C89B3C]
+        "
+      >
+        About AC Plumbing
       </span>
 
-      <h2 className="mt-6 text-[56px] font-extrabold leading-[1.05] text-[#123B67]">
-        Reliable Plumbing
+      {/* Heading */}
+
+      <h2
+        className="
+          mt-7
+          font-[800]
+          text-[42px]
+          leading-[1.12]
+          tracking-[-0.03em]
+          text-[#123B67]
+          lg:text-[58px]
+        "
+      >
+        Professional
         <br />
+
         <span className="text-[#C89B3C]">
-          Solutions Built
+          Plumbing & Heating
         </span>
+
         <br />
-        Around Trust.
+
+        Solutions You Can Trust
       </h2>
 
-      <p className="mt-8 max-w-xl text-lg leading-9 text-gray-600">
-        At AC Plumbing & Heating, we combine skilled craftsmanship,
-        premium equipment and transparent pricing to provide reliable
-        plumbing and heating services for homes and businesses.
+      {/* Description */}
+
+      <p
+        className="
+          mt-8
+          text-[17px]
+          leading-8
+          tracking-[0.01em]
+          text-[#667085]
+        "
+      >
+        AC Plumbing & Heating delivers dependable plumbing, heating,
+        maintenance and emergency repair services with a commitment to
+        quality craftsmanship, transparent pricing and customer
+        satisfaction. We proudly serve residential and commercial
+        properties with reliable solutions built to last.
       </p>
 
+      {/* Feature Cards */}
+
       <div className="mt-12 grid gap-6 sm:grid-cols-2">
+
         {features.map((item) => {
           const Icon = item.icon;
 
           return (
             <div
               key={item.title}
-              className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#C89B3C] hover:shadow-2xl"
+              className="
+                group
+                relative
+                overflow-hidden
+                rounded-[24px]
+                border
+                border-slate-200
+                bg-white
+                p-6
+                transition-all
+                duration-500
+                hover:-translate-y-2
+                hover:border-[#C89B3C]
+                hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]
+              "
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#123B67] text-white transition-all duration-300 group-hover:bg-[#C89B3C]">
+              {/* Top Accent */}
+              <div className="absolute left-0 top-0 h-1 w-full scale-x-0 bg-[#C89B3C] transition-transform duration-500 group-hover:scale-x-100" />
+
+              {/* Icon */}
+
+              <div
+                className="
+                  flex
+                  h-14
+                  w-14
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  bg-[#123B67]
+                  text-white
+                  transition-all
+                  duration-300
+                  group-hover:bg-[#C89B3C]
+                  group-hover:rotate-6
+                "
+              >
                 <Icon size={22} />
               </div>
 
-              <h4 className="mt-5 text-xl font-bold text-[#123B67]">
-                {item.title}
-              </h4>
+              {/* Title */}
 
-              <p className="mt-3 text-[15px] leading-7 text-gray-500">
+              <h3
+                className="
+                  mt-5
+                  text-[20px]
+                  font-semibold
+                  tracking-[-0.02em]
+                  text-[#123B67]
+                "
+              >
+                {item.title}
+              </h3>
+
+              {/* Description */}
+
+              <p
+                className="
+                  mt-3
+                  text-[15px]
+                  leading-7
+                  text-[#667085]
+                "
+              >
                 {item.desc}
               </p>
             </div>
@@ -80,10 +181,32 @@ export default function AboutContent() {
         })}
       </div>
 
-      <div className="mt-12">
-        <Button href="/about">
-          Explore Company
+      {/* Bottom CTA */}
+
+      <div className="mt-14 flex flex-wrap items-center gap-8">
+
+        <Button href="/quote">
+          Get Free Estimate
         </Button>
+
+        <div>
+          <h3 className="text-[42px] font-extrabold text-[#123B67]">
+            15+
+          </h3>
+
+          <p
+            className="
+              mt-1
+              text-[13px]
+              uppercase
+              tracking-[0.22em]
+              text-[#667085]
+            "
+          >
+            Years Experience
+          </p>
+        </div>
+
       </div>
 
     </div>

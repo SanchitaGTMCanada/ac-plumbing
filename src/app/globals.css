@@ -12,10 +12,9 @@
   --border: #E5E7EB;
 
   /* Text */
-  --heading: #fffefe;
+  --heading: #123B67;   /* <-- change this */
   --text: #667085;
 
-  /* Layout */
   --container: 1280px;
 }
 
@@ -30,9 +29,10 @@ html{
 }
 
 body{
-  background:var(--white);
-  color:var(--text);
-  font-family:var(--font-inter);
+  background: var(--white);
+  color: var(--text);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5,h6{
