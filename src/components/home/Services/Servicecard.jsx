@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { HiArrowUpRight } from "react-icons/hi2";
-import { GiSpanner } from "react-icons/gi";
+
 
 export default function ServiceCard({ service, index }) {
   const Icon = service.icon;
