@@ -5,70 +5,111 @@ import ServiceCard from "./ServiceCard";
 
 export default function InfiniteMarquee({ services }) {
   const trackRef = useRef(null);
-
-  const animationRef = useRef(null);
-
   const position = useRef(0);
+  const animationRef = useRef(null);
 
   const [paused, setPaused] = useState(false);
 
-  // Duplicate the services for infinite scrolling
+  // Duplicate enough items for all screen sizes
+  const items = [
+    ...services,
+    ...services,
+    ...services,
+  ];
 
-  const items = [...services, ...services];
 
   useEffect(() => {
-    const speed = 0.45; // Increase for faster, decrease for slower
+    const speed = 0.45;
 
     const animate = () => {
+
       if (!trackRef.current) return;
 
+
       if (!paused) {
+
         position.current -= speed;
 
-        const halfWidth = trackRef.current.scrollWidth / 2;
 
-        if (Math.abs(position.current) >= halfWidth) {
+        const firstSetWidth =
+          trackRef.current.scrollWidth / 3;
+
+
+        // seamless reset
+        if (Math.abs(position.current) >= firstSetWidth) {
           position.current = 0;
         }
 
-        trackRef.current.style.transform = `translateX(${position.current}px)`;
+
+        trackRef.current.style.transform =
+          `translate3d(${position.current}px,0,0)`;
       }
 
-      animationRef.current = requestAnimationFrame(animate);
+
+      animationRef.current =
+        requestAnimationFrame(animate);
+
     };
 
-    animationRef.current = requestAnimationFrame(animate);
 
-    return () => cancelAnimationFrame(animationRef.current);
+    animationRef.current =
+      requestAnimationFrame(animate);
+
+
+    return () => {
+      cancelAnimationFrame(animationRef.current);
+    };
+
   }, [paused]);
 
+
   return (
+
     <div
-      className="overflow-hidden"
+      className="
+        overflow-hidden
+        w-full
+      "
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
+
       <div
         ref={trackRef}
-        className="flex w-max gap-8 will-change-transform"
+        className="
+          flex
+          w-max
+          gap-8
+          will-change-transform
+        "
       >
-        {items.map((service, index) => (
+
+        {items.map((service,index)=>(
+
           <div
             key={index}
             className="
-              w-[340px]
+              w-[300px]
               shrink-0
+
+              sm:w-[330px]
               md:w-[360px]
               xl:w-[390px]
             "
           >
+
             <ServiceCard
               service={service}
               index={index}
             />
+
           </div>
+
         ))}
+
       </div>
+
     </div>
+
   );
 }
