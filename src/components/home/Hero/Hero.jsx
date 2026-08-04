@@ -51,7 +51,7 @@ const titleItem = {
   
 
   return (
-    <section className="relative h-screen overflow-hidden " style={{ minHeight: "calc(100vh - 160px)", paddingTop: "160px" }}>
+<section className="relative min-h-[100svh] overflow-hidden pt-[110px] lg:pt-[160px]">
 
       {/* Background Slider */}
 
@@ -88,7 +88,7 @@ const titleItem = {
 <div className="relative z-20 flex justify-center " >
       <Container className="relative z-20 h-full">
 
-        <div className="flex h-full items-center pt-28">
+       <div className="flex min-h-[calc(100svh-110px)] items-center py-8 lg:py-0" style={{paddingTop:"162px"}}>
 
           <div className="max-w-[680px]">
 
@@ -98,13 +98,15 @@ const titleItem = {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: .2 }}
-              className="inline-flex items-center gap-4 rounded-full border border-white/20 bg-white/10 backdrop-blur-xl px-8 py-8" style={{padding:"6px"}}
+              className="inline-flex items-center gap-4 rounded-full border border-white/20 bg-white/10 backdrop-blur-xl px-8 py-8" style={{padding:"6px", marginLeft:"5px"}}
+            
+             
             >
-              <span className="h-2.5 w-2.5 rounded-full bg-[var(--primary)]"></span>
+             <span className="h-3 w-3 rounded-full bg-white border-2 border-[#F4C46A] shadow-[0_0_10px_rgba(244,196,106,0.8)]"></span>
 
-              <span className="text-[13px] font-semibold uppercase tracking-[3px] text-white">
-                Trusted Since 2010
-              </span>
+           <span className="text-[13px] font-semibold uppercase tracking-[3px] text-white" >
+  Fast • Reliable • Professional
+</span>
             </motion.div>
 
             {/* Heading */}
@@ -145,6 +147,7 @@ const titleItem = {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: .55 }}
               className="mt-8 max-w-[620px] text-[18px] leading-9 text-white/90"
+              style={{marginLeft:"5px"}}
             >
               From emergency plumbing repairs to complete heating
               installations, AC Plumbing & Heating delivers fast,
@@ -159,7 +162,7 @@ const titleItem = {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: .75 }}
               className="mt-10 flex flex-wrap items-center gap-6"
-              style={{margin:"20px" , marginLeft:"0px"}}
+              style={{margin:"20px" , marginLeft:"5px"}}
              
               
             >
@@ -188,12 +191,13 @@ const titleItem = {
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
               className="mt-16 flex flex-wrap gap-6"
+               style={{margin:"20px" , marginLeft:"7px"}}
             >
               {[
                 {
-  number: "20+",
-  title: "Service Areas"
-},
+                  number: "20+",
+                  title: "Service Areas"
+                },
                 {
                   number: "24/7",
                   title: "Emergency Support",
@@ -208,9 +212,9 @@ const titleItem = {
                   className="min-w-[180px] rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-7 py-6"
                   style={{padding:"10px"}}
                 >
-                  <h3 className="text-[40px] font-bold text-white leading-none">
-                    {item.number}
-                  </h3>
+                  <span className="text-[40px] font-bold leading-none bg-gradient-to-r from-white via-[#FFE9A8] to-[#F4C46A] bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(244,196,106,0.5)]">
+                {item.number}
+              </span>
 
                   <p className="mt-3 text-[15px] tracking-wide text-white/80">
                     {item.title}
