@@ -128,7 +128,7 @@ export default function Header() {
         </Container>
       </header>
 
-      <MobileMenu open={open} />
+      <MobileMenu open={open}  onClose={() => setOpen(false)}/>
     </>
   );
 }

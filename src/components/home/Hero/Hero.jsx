@@ -85,7 +85,7 @@ const titleItem = {
       </div>
 
       {/* Content */}
-<div className="relative z-20 flex justify-center " >
+      <div className="relative z-20 flex justify-center " >
       <Container className="relative z-20 h-full">
 
        <div className="flex min-h-[calc(100svh-110px)] items-center py-8 lg:py-0" style={{paddingTop:"162px"}}>
