@@ -117,7 +117,7 @@ const titleItem = {
   transition={{ duration: 1 }}
  className="mt-8 text-[52px] md:text-[64px] lg:text-[76px] font-semibold leading-[1.05] tracking-[-2px] text-white"
 >
-  <span className="text-white">
+  <span className="text-white" style={{ marginLeft:"5px"}}>
     Professional
     <br />
   </span>
@@ -174,7 +174,7 @@ const titleItem = {
                 href="/services"
                 className="group inline-flex items-center gap-3 font-semibold text-white transition"
 
-                style={{color:"white"}}
+                style={{color:"white" , marginLeft:"5px"}}
               >
                 Explore Services
 

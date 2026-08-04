@@ -92,11 +92,11 @@ export default function MobileMenu({ open, onClose }) {
 
                        style={{padding:"5px 20px 5px 20px", marginBottom:"10px"}}
                       >
-                  <span
-  className="font-semibold text-white"
+      <span
+  className="font-semibold text-transparent bg-clip-text bg-[length:200%_100%] animate-gradient-x"
   style={{
-    textShadow:
-      "0 0 8px rgba(244,196,106,.7), 0 0 16px rgba(244,196,106,.3)",
+    backgroundImage:
+      "linear-gradient(90deg, #FFF8D5, #F4C46A, #FFE9A8, #FFF8D5)",
   }}
 >
   {item.title}
