@@ -6,36 +6,37 @@ import {
   HiShieldCheck,
   HiOutlineClock,
   HiCheckBadge,
-  HiOutlineChatBubbleLeftRight,
+  HiCurrencyDollar,
 } from "react-icons/hi2";
 
 
 const features = [
   {
-    icon: HiShieldCheck,
-    title: "Licensed Experts",
+    icon: HiOutlineClock,
+    title: "24/7 Availability",
     description:
-      "Certified professionals delivering safe and reliable plumbing solutions.",
+      "Emergency plumbing and heating services available around the clock whenever you need us.",
   },
   {
-    icon: HiOutlineClock,
-    title: "Quick Response",
+    icon: HiShieldCheck,
+    title: "Experienced Professionals",
     description:
-      "Fast service response to handle your plumbing emergencies.",
+      "Licensed technicians providing dependable plumbing, heating and HVAC solutions with years of industry expertise.",
+  },
+  {
+    icon: HiCurrencyDollar,
+    title: "Unbeatable Service Cost",
+    description:
+      "Affordable pricing with transparent estimates, competitive rates and exceptional value on every project.",
   },
   {
     icon: HiCheckBadge,
-    title: "Quality Work",
+    title: "Guaranteed Satisfaction",
     description:
-      "Premium workmanship with long-lasting solutions.",
-  },
-  {
-    icon: HiOutlineChatBubbleLeftRight,
-    title: "24/7 Support",
-    description:
-      "Dedicated support whenever you need assistance.",
+      "Every project is completed with quality workmanship, fast response and a commitment to customer satisfaction.",
   },
 ];
+
 
 
 export default function WhyChoose() {
