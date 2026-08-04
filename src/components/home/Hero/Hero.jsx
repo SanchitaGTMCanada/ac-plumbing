@@ -51,7 +51,7 @@ const titleItem = {
   
 
   return (
-<section className="relative min-h-[100svh] overflow-hidden pt-[110px] lg:pt-[160px]">
+<section className="relative min-h-[100svh] overflow-hidden pt-[110px] lg:pt-[160px]" id="home" >
 
       {/* Background Slider */}
 

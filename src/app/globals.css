@@ -175,3 +175,9 @@ button{
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+/* globals.css */
+
+html {
+  scroll-behavior: smooth;
+}

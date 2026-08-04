@@ -20,10 +20,7 @@ const footerNavigation = [
     title: "Services",
     href: "#services",
   },
-  {
-    title: "Projects",
-    href: "#projects",
-  },
+
   {
     title: "Contact",
     href: "#contact",
@@ -53,20 +50,29 @@ const services = [
   },
 ];
 
+
+
 export default function Footer() {
 
-  const handleNavigation = (e, href) => {
-    e.preventDefault();
+const handleNavigation = (e, href) => {
+  e.preventDefault();
 
-    const section = document.querySelector(href);
+  const section = document.querySelector(href);
 
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
+  if (!section) return;
+
+  const headerHeight = 120; // your fixed header height
+
+  const top =
+    section.getBoundingClientRect().top +
+    window.pageYOffset -
+    headerHeight;
+
+  window.scrollTo({
+    top,
+    behavior: "smooth",
+  });
+};
 
   return (
     <footer
@@ -289,7 +295,7 @@ export default function Footer() {
                 "
               >
 
-                <div className="flex gap-4">
+                <div className="flex gap-4" style={{alignItems:"center", margin:"10px 0px 10px 0px"}}>
 
                   <HiOutlinePhone
                     size={24}
@@ -311,14 +317,14 @@ export default function Footer() {
                     </span>
 
                     <p className="mt-1 text-white/80">
-                      +1 234 567 890
+                      867-447-1500
                     </p>
 
                   </div>
 
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-4" style={{alignItems:"center", margin:"10px 0px 10px 0px"}}>
 
                   <HiOutlineEnvelope
                     size={24}
@@ -340,14 +346,14 @@ export default function Footer() {
                     </span>
 
                     <p className="mt-1 text-white/80">
-                      info@example.com
+                      info@acplumbingheating.ca
                     </p>
 
                   </div>
 
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-4" style={{alignItems:"center", margin:"10px 0px 10px 0px"}}>
 
                   <HiOutlineMapPin
                     size={24}
@@ -369,7 +375,9 @@ export default function Footer() {
                     </span>
 
                     <p className="mt-1 text-white/80">
-                      Canada
+                      P.O. Box 20072, 2nd Floor,
+4910 – 50th Street Yellowknife,
+NT X1A 3X8
                     </p>
 
                   </div>
@@ -413,19 +421,16 @@ export default function Footer() {
           >
 
             <span>
-              © {new Date().getFullYear()} AC Plumbing. All rights reserved.
+              © {new Date().getFullYear()} AC Plumbing and Heating © COPYRIGHT 2026
             </span>
-
-            <Link
-              href="#home"
-              onClick={(e) => handleNavigation(e, "#home")}
-              className="
-                transition
-                hover:text-[#C89B3C]
-              "
-            >
-              Back to Top ↑
-            </Link>
+<Link
+  href="#home"
+  scroll={false}
+  onClick={(e) => handleNavigation(e, "#home")}
+  className="transition hover:text-[#C89B3C]"
+>
+  Back to Top ↑
+</Link>
 
           </div>
 

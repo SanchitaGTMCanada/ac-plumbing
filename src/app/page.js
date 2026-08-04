@@ -12,8 +12,9 @@ export default function Home() {
 
 
       <Hero />
-           <About />
+          
            <Services />
+            <About />
            <WhyChoose/>
            <Footer />
 

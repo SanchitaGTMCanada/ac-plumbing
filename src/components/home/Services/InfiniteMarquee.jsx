@@ -19,7 +19,7 @@ export default function InfiniteMarquee({ services }) {
 
 
   useEffect(() => {
-    const speed = 0.45;
+    const speed = 1.5;
 
     const animate = () => {
 
