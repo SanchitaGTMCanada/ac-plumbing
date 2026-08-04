@@ -358,7 +358,7 @@ const handleNavigation = (e, href) => {
                 <div className="flex gap-4" style={{alignItems:"center", margin:"10px 0px 10px 0px"}}>
 
                   <HiOutlineMapPin
-                    size={24}
+                    size={70}
                     className="text-[#C89B3C]"
                   />
 
