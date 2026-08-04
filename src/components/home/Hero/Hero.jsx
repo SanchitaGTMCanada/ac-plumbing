@@ -104,7 +104,7 @@ const titleItem = {
             >
              <span className="h-3 w-3 rounded-full bg-white border-2 border-[#F4C46A] shadow-[0_0_10px_rgba(244,196,106,0.8)]"></span>
 
-           <span className="text-[13px] font-semibold uppercase tracking-[3px] text-white" >
+           <span className="text-[13px] font-semibold uppercase tracking-[3px] text-white"  >
   Fast • Reliable • Professional
 </span>
             </motion.div>
@@ -117,7 +117,7 @@ const titleItem = {
   transition={{ duration: 1 }}
  className="mt-8 text-[52px] md:text-[64px] lg:text-[76px] font-semibold leading-[1.05] tracking-[-2px] text-white"
 >
-  <span className="text-white" style={{ marginLeft:"5px"}}>
+  <span className="text-white" style={{ marginLeft:"5px", marginTop:"20px", marginBottom:"20px"}}>
     Professional
     <br />
   </span>
@@ -147,12 +147,11 @@ const titleItem = {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: .55 }}
               className="mt-8 max-w-[620px] text-[18px] leading-9 text-white/90"
-              style={{marginLeft:"5px"}}
+              style={{marginLeft:"5px", marginTop:"20px", marginBottom:"20px"}}
             >
-              From emergency plumbing repairs to complete heating
-              installations, AC Plumbing & Heating delivers fast,
-              reliable and affordable solutions for residential and
-              commercial properties across Canada.
+              
+            24/7 Plumbing and Heating
+            Services at Unbeatable Prices
             </motion.p>
 
             {/* Buttons */}
@@ -162,7 +161,7 @@ const titleItem = {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: .75 }}
               className="mt-10 flex flex-wrap items-center gap-6"
-              style={{margin:"20px" , marginLeft:"5px"}}
+              style={{ marginLeft:"5px" , marginTop:"20px", marginBottom:"30px"}}
              
               
             >
