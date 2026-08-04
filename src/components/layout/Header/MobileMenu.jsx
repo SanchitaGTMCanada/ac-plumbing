@@ -31,12 +31,24 @@ export default function MobileMenu({ open, onClose }) {
 />
 
           {/* Menu */}
-         <motion.div
-  initial={{ opacity: 0, scale: 0.96 }}
-  animate={{ opacity: 1, scale: 1 }}
-  exit={{ opacity: 0, scale: 0.96 }}
-  transition={{ duration: 0.35 }}
-  className="relative flex h-screen flex-col overflow-y-auto px-6 scrollbar-hide"
+     <motion.div
+  initial={{
+    opacity: 0,
+    y: -30,
+  }}
+  animate={{
+    opacity: 1,
+    y: 0,
+  }}
+  exit={{
+    opacity: 0,
+    y: -30,
+  }}
+  transition={{
+    duration: 0.45,
+    ease: [0.22, 1, 0.36, 1], // smooth easeOutExpo
+  }}
+  className="relative h-screen overflow-y-auto px-6 scrollbar-hide"
 >
             {/* Close */}
             <button
@@ -60,7 +72,7 @@ export default function MobileMenu({ open, onClose }) {
             </div>
 
             {/* Navigation */}
-            <div className="flex-1 flex flex-col justify-between px-8" style={{padding:"20px"}}>
+            <div className="flex flex-col px-8 pb-8" style={{padding:"20px"}}>
               <nav>
                 <ul className="space-y-6" style={{marginBottom:"20px"}}>
                   {navigation.map((item, index) => (
