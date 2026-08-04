@@ -44,7 +44,7 @@ export default function AboutImages() {
       </motion.div>
 
       {/* Experience Card */}
-<motion.div
+{/* <motion.div
   animate={{ y: [0, -8, 0] }}
   transition={{
     repeat: Infinity,
@@ -71,7 +71,7 @@ export default function AboutImages() {
   <span className="mt-2 block text-sm font-medium uppercase text-[#667085]">
     Years Experience
   </span>
-</motion.div>
+</motion.div> */}
     </div>
   );
 }

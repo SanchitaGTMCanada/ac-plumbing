@@ -33,7 +33,7 @@ const features = [
 
 export default function AboutContent() {
   return (
-    <div className="max-w-[620px]" style={{marginTop:"60px", marginBottom:"60px"}}>
+    <div className="max-w-[620px]" style={{marginTop:"60px", marginBottom:"60px" , marginLeft:"7px"}}>
 
       {/* Badge */}
 
@@ -53,8 +53,9 @@ export default function AboutContent() {
           tracking-[0.22em]
           text-[#C89B3C]
         "
+        style={{padding:"5px"}}
       >
-        About AC Plumbing
+        About Us
       </span>
 
       {/* Heading */}
@@ -69,6 +70,7 @@ export default function AboutContent() {
           text-[#123B67]
           lg:text-[58px]
         "
+        style={{marginTop:"10px", marginBottom:"10px", }}
       >
         Professional
         <br />
@@ -92,12 +94,10 @@ export default function AboutContent() {
           tracking-[0.01em]
           text-[#667085]
         "
+
+          style={{marginTop:"20px", marginBottom:"20px", }}
       >
-        AC Plumbing & Heating delivers dependable plumbing, heating,
-        maintenance and emergency repair services with a commitment to
-        quality craftsmanship, transparent pricing and customer
-        satisfaction. We proudly serve residential and commercial
-        properties with reliable solutions built to last.
+        Round-the-clock professional Heating, and Plumbing solutions, delivered by skilled technicians.Our motto is to deliver reliable, reasonable, and professional services for your home and commercial spaces. Backed by years of exposure and a team of certified professionals, we are dedicated to keeping your space comfortable – no matter the season or the time of day
       </p>
 
       {/* Feature Cards */}
@@ -125,6 +125,7 @@ export default function AboutContent() {
                 hover:border-[#C89B3C]
                 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]
               "
+              style={{marginTop:"10px", marginBottom:"10px", padding:"15px"}}
             >
               {/* Top Accent */}
               <div className="absolute left-0 top-0 h-1 w-full scale-x-0 bg-[#C89B3C] transition-transform duration-500 group-hover:scale-x-100" />
@@ -160,6 +161,7 @@ export default function AboutContent() {
                   tracking-[-0.02em]
                   text-[#123B67]
                 "
+                style={{marginBottom:"9px", marginTop:"9px"}}
               >
                 {item.title}
               </h3>
@@ -190,11 +192,15 @@ export default function AboutContent() {
         </Button>
 
         <div>
-          <h3 className="text-[42px] font-extrabold text-[#123B67]">
-            15+
-          </h3>
+        {/* <h3 className="text-[42px] font-extrabold text-[#123B67]">
+  10+
+</h3>
 
-          <p
+<p className="mt-2 text-sm text-gray-600">
+  Plumbing & Heating Services
+</p> */}
+
+          {/* <p
             className="
               mt-1
               text-[13px]
@@ -204,7 +210,7 @@ export default function AboutContent() {
             "
           >
             Years Experience
-          </p>
+          </p> */}
         </div>
 
       </div>
