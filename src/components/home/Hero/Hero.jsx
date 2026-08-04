@@ -4,9 +4,12 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
+import { HiPhone } from "react-icons/hi2";
 
 import Container from "@/components/ui/Container/Container";
 import Button from "@/components/ui/Button/Button";
+
+import { HiArrowRight } from "react-icons/hi2";
 
 const heroImages = [
   "/assets/hero/hero-1.jpg",
@@ -47,6 +50,26 @@ const titleItem = {
       duration: 0.8,
     },
   },
+};
+
+const handleNavigation = (e, href) => {
+  e.preventDefault();
+
+  const section = document.querySelector(href);
+
+  if (!section) return;
+
+  const headerHeight = 120; // your fixed header height
+
+  const top =
+    section.getBoundingClientRect().top +
+    window.pageYOffset -
+    headerHeight;
+
+  window.scrollTo({
+    top,
+    behavior: "smooth",
+  });
 };
   
 
@@ -165,22 +188,26 @@ const titleItem = {
              
               
             >
-              <Button href="/quote">
-                Book Now
-              </Button>
+<Button href="tel:+18674471500">
+  <span className="flex items-center justify-center gap-2">
+    <HiPhone size={20} />
+    Call Now
+  </span>
+</Button>
 
-              <Link
-                href="/services"
-                className="group inline-flex items-center gap-3 font-semibold text-white transition"
+            <Link
+  href="#services"
+  onClick={(e) => handleNavigation(e, "#services")}
+  className="group inline-flex items-center gap-2 font-semibold text-white transition"
+  style={{ color: "white", marginLeft: "5px" }}
+>
+  <span>Explore Services</span>
 
-                style={{color:"white" , marginLeft:"5px"}}
-              >
-                Explore Services
-
-                <span className="transition-transform duration-300 group-hover:translate-x-2">
-                  →
-                </span>
-              </Link>
+  <HiArrowRight
+    size={18}
+    className="transition-transform duration-300 group-hover:translate-x-2"
+  />
+</Link>
             </motion.div>
 
             {/* Statistics */}
@@ -194,7 +221,7 @@ const titleItem = {
             >
               {[
                 {
-                  number: "20+",
+                  number: "10+",
                   title: "Service Areas"
                 },
                 {

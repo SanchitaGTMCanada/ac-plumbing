@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { HiArrowUpRight } from "react-icons/hi2";
+import { HiPhone } from "react-icons/hi2";
 
 
 export default function ServiceCard({ service, index }) {
@@ -287,7 +288,10 @@ export default function ServiceCard({ service, index }) {
   "
   style={{ width: "fit-content", marginTop:"10px",padding:"8px" }}
 >
-  <span style={{color:"white"}}>Book Now</span>
+ <span className="flex items-center gap-2" style={{ color: "white" }}>
+  <HiPhone size={18} />
+  Call Now
+</span>
 
   <HiArrowUpRight
     size={22}

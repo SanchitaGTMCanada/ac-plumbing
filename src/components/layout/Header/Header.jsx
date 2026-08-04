@@ -11,6 +11,8 @@ import Button from "@/components/ui/Button/Button";
 import navigation from "@/data/navigation";
 import MobileMenu from "./MobileMenu";
 
+import { HiPhone } from "react-icons/hi2";
+
 export default function Header() {
   const [sticky, setSticky] = useState(false);
   const [open, setOpen] = useState(false);
@@ -93,42 +95,48 @@ export default function Header() {
 
             {/* Navigation */}
             <nav className="hidden lg:flex items-center justify-center gap-12">
-              {navigation.map((item) => (
-                <Link
-                  key={item.title}
-                  href={item.href}
-                  onClick={(e) => handleNavigation(e, item.href)}
-                  className={`group relative text-[16px] font-medium transition-all duration-300 ${
-                    sticky
-                      ? "text-[#123B67] hover:text-[var(--primary)]"
-                      : "!text-white hover:!text-[#F4C46A]"
-                  }`}
-                >
-                  {item.title}
+        {navigation
+  .filter((item) => item.title !== "Home")
+  .map((item) => (
+    <Link
+      key={item.title}
+      href={item.href}
+      onClick={(e) => handleNavigation(e, item.href)}
+      className={`group relative text-[16px] font-medium transition-all duration-300 ${
+        sticky
+          ? "text-[#123B67] hover:text-[var(--primary)]"
+          : "!text-white hover:!text-[#F4C46A]"
+      }`}
+    >
+      {item.title}
 
-                  <span
-                    className="
-                      absolute
-                      left-0
-                      -bottom-2
-                      h-[2px]
-                      w-0
-                      bg-[var(--primary)]
-                      transition-all
-                      duration-300
-                      group-hover:w-full
-                    "
-                  />
-                </Link>
-              ))}
+      <span
+        className="
+          absolute
+          left-0
+          -bottom-2
+          h-[2px]
+          w-0
+          bg-[var(--primary)]
+          transition-all
+          duration-300
+          group-hover:w-full
+        "
+      />
+    </Link>
+  ))}
             </nav>
 
             {/* Right Side */}
             <div className="flex items-center justify-end flex-shrink-0 gap-4">
               <div className="hidden lg:block">
-                <Button href="/quote">Book Now</Button>
-              </div>
-
+  <Button href="tel:+18674471500">
+    <span className="flex items-center justify-center gap-2">
+      <HiPhone size={18} />
+      <span>Call Now</span>
+    </span>
+  </Button>
+</div>
               <button
                 onClick={() => setOpen(!open)}
                 className={`lg:hidden flex items-center justify-center w-10 h-10 text-3xl transition-all duration-300 ${

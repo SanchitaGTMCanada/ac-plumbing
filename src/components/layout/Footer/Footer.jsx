@@ -7,6 +7,11 @@ import {
   HiOutlineMapPin,
 } from "react-icons/hi2";
 
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+} from "react-icons/fa";
+
 const footerNavigation = [
   {
     title: "Home",
@@ -21,10 +26,10 @@ const footerNavigation = [
     href: "#services",
   },
 
-  {
-    title: "Contact",
-    href: "#contact",
-  },
+  // {
+  //   title: "Contact",
+  //   href: "#contact",
+  // },
 ];
 
 const services = [
@@ -78,6 +83,7 @@ const handleNavigation = (e, href) => {
     <footer
       className="bg-[#081F38] text-white"
       style={{ marginTop: "50px" }}
+      id="contact"
     >
 
       {/* Main */}
@@ -109,67 +115,109 @@ const handleNavigation = (e, href) => {
 
             {/* Brand */}
 
-            <div>
+        <div>
+  <h2
+    className="
+      text-3xl
+      font-black
+      tracking-tight
+    "
+    style={{ color: "#C89B3C" }}
+  >
+    AC Plumbing
+  </h2>
 
-              <h2
-                className="
-                  text-3xl
-                  font-black
-                  tracking-tight
-                "
-                style={{ color: "#C89B3C" }}
-              >
-                AC Plumbing
-              </h2>
+  <div
+    className="
+      mt-4
+      h-[3px]
+      w-14
+      bg-[#C89B3C]
+    "
+  />
 
-              <div
-                className="
-                  mt-4
-                  h-[3px]
-                  w-14
-                  bg-[#C89B3C]
-                "
-              />
+  <p
+    className="
+      mt-6
+      max-w-sm
+      leading-8
+      text-white/60
+    "
+  >
+    Professional plumbing and heating services delivering
+    reliable solutions with quality workmanship and trusted
+    support.
+  </p>
 
-              <p
-                className="
-                  mt-6
-                  max-w-sm
-                  leading-8
-                  text-white/60
-                "
-              >
-                Professional plumbing and heating services
-                delivering reliable solutions with quality
-                workmanship and trusted support.
-              </p>
+  {/* Social Icons */}
 
-          <Link
-  href="#contact"
-  onClick={(e) => handleNavigation(e, "#contact")}
-  className="
-    mt-8
-    inline-flex
-    rounded-full
-    bg-[#C89B3C]
-    px-7
-    py-3.5
-    font-semibold
-    text-white
-    transition-all
-    duration-300
-    hover:bg-white
-    hover:!text-[#123B67]
-  "
-  style={{
-    padding: "5px",
-    marginTop: "10px",
-  }}
->
-  Request Service
-</Link>
+  <div
+    className="flex items-center gap-4"
+    style={{ marginTop: "25px" }}
+  >
+    <a
+      href="https://www.facebook.com/people/AC-Plumbing-Heating/61579529454439/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        group
+        flex
+        h-12
+        w-12
+        items-center
+        justify-center
+        rounded-full
+        border
+        border-white/15
+        bg-white/10
+        backdrop-blur-xl
+        text-[#C89B3C]
+        transition-all
+        duration-300
+        hover:-translate-y-1
+        hover:border-[#C89B3C]
+        hover:bg-[#C89B3C]
+        hover:text-[#123B67]
+      "
+    >
+      <FaFacebookF
+        size={18}
+        className="transition-transform duration-300 group-hover:scale-110"
+      />
+    </a>
 
-            </div>
+    <a
+      href="https://www.linkedin.com/company/108301837/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        group
+        flex
+        h-12
+        w-12
+        items-center
+        justify-center
+        rounded-full
+        border
+        border-white/15
+        bg-white/10
+        backdrop-blur-xl
+        text-[#C89B3C]
+        transition-all
+        duration-300
+        hover:-translate-y-1
+        hover:border-[#C89B3C]
+        hover:bg-[#C89B3C]
+        hover:text-[#123B67]
+      "
+    >
+      <FaLinkedinIn
+        size={18}
+        className="transition-transform duration-300 group-hover:scale-110"
+      />
+    </a>
+  </div>
+</div>
 
             {/* Navigation */}
 
