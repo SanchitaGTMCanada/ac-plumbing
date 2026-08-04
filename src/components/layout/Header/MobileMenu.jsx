@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoClose } from "react-icons/io5";
-
+import { HiPhone, HiArrowUpRight } from "react-icons/hi2";
 import navigation from "@/data/navigation";
 
 export default function MobileMenu({ open, onClose }) {
@@ -184,17 +184,20 @@ export default function MobileMenu({ open, onClose }) {
                   </p>
 
                   <Link
-                    href="/quote"
-                    onClick={onClose}
-                    className="group mt-6 flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#F4C46A] to-[#FFE29A] px-6 py-4 font-semibold text-[#081F38] shadow-[0_10px_30px_rgba(244,196,106,.35)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(244,196,106,.45)]"
-                    style={{ padding: "5px" }}
-                  >
-                    Book Free Estimate
+  href="tel:+18674471500"
+  onClick={onClose}
+  className="group mt-6 flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#F4C46A] via-[#FFD76A] to-[#FFE29A] px-6 py-4 font-semibold text-[#081F38] shadow-[0_10px_30px_rgba(244,196,106,.35)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(244,196,106,.45)]"
+  style={{ padding: "10px" }}
+>
+  <HiPhone size={18} />
 
-                    <span className="ml-3 transition-transform duration-300 group-hover:translate-x-2">
-                      →
-                    </span>
-                  </Link>
+  <span>Call Now</span>
+
+  <HiArrowUpRight
+    size={18}
+    className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+  />
+</Link>
 
                 </div>
               </div>
