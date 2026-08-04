@@ -48,7 +48,7 @@ export default function MobileMenu({ open, onClose }) {
     duration: 0.45,
     ease: [0.22, 1, 0.36, 1], // smooth easeOutExpo
   }}
-  className="relative h-screen overflow-y-auto px-6 scrollbar-hide"
+className="relative flex min-h-screen max-h-screen flex-col overflow-y-auto overflow-x-hidden px-6 scrollbar-hide"
 >
             {/* Close */}
             <button
