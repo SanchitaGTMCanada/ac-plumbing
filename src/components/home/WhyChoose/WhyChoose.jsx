@@ -173,34 +173,33 @@ export default function WhyChoose() {
 
     {/* Number */}
 
-    <motion.h3
-      initial={{
-        opacity:0,
-        y:15,
+<div className="relative inline-block overflow-hidden">
+  <motion.h3
+    initial={{ opacity: 0, y: 15 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5, delay: 0.6 }}
+    className="relative text-5xl lg:text-6xl font-black text-[#123B67]"
+  >
+    10+
+
+    <motion.span
+      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/90 to-transparent opacity-70"
+      style={{
+        mixBlendMode: "screen",
+        transform: "skewX(-20deg)",
       }}
-      whileInView={{
-        opacity:1,
-        y:0,
-      }}
-      viewport={{
-        once:true,
+      animate={{
+        x: ["-150%", "150%", "-150%"],
       }}
       transition={{
-        duration:.5,
-        delay:.6,
+        duration: 3,
+        repeat: Infinity,
+        ease: "linear",
       }}
-      className="
-        text-5xl
-        font-black
-        leading-none
-        tracking-tight
-        text-[#123B67]
-        lg:text-6xl
-      "
-    >
-      15+
-    </motion.h3>
-
+    />
+  </motion.h3>
+</div>
 
     {/* Divider */}
 
@@ -216,22 +215,20 @@ export default function WhyChoose() {
     {/* Text */}
 
     <div>
-
-      <p
-        className="
-          max-w-[100px]
-          text-sm
-          font-semibold
-          leading-5
-          text-[#667085]
-        "
-      >
-        Years Of
-        <br />
-        Experience
-      </p>
-
-    </div>
+  <p
+    className="
+      max-w-[120px]
+      text-sm
+      font-semibold
+      leading-5
+      text-[#667085]
+    "
+  >
+    Plumbing
+    <br />
+     Services
+  </p>
+</div>
 
 
   </div>
@@ -269,13 +266,14 @@ export default function WhyChoose() {
               tracking-[0.3em]
               text-[#C89B3C]
             "
+            style={{marginBottom:"30px"}}
           >
 
             <span className="
               h-[2px]
               w-10
               bg-[#C89B3C]
-            "/>
+            " />
 
             Why Choose Us
 
@@ -292,6 +290,8 @@ export default function WhyChoose() {
               text-[#123B67]
               lg:text-5xl
             "
+
+             style={{marginBottom:"10px"}}
           >
             Trusted Plumbing Solutions Built Around Your Comfort
           </h2>
@@ -305,6 +305,7 @@ export default function WhyChoose() {
               leading-8
               text-[#667085]
             "
+             style={{marginBottom:"20px"}}
           >
             From emergency repairs to complete heating installations,
             our experienced team delivers dependable service with
@@ -323,6 +324,7 @@ export default function WhyChoose() {
               gap-5
               sm:grid-cols-2
             "
+           
           >
 
             {features.map((item,index)=>{
@@ -343,9 +345,10 @@ export default function WhyChoose() {
                     border-slate-100
                     bg-white
                     p-6
-                    shadow-[0_15px_40px_rgba(0,0,0,.05)]
+                    shadow-[0_15px_40px_rgba(0,0,0,.09)]
                     transition
                   "
+                   style={{padding:"20px", marginBottom:"30px"}}
                 >
 
                   <div
@@ -362,6 +365,7 @@ export default function WhyChoose() {
                       duration-300
                       group-hover:bg-[#C89B3C]
                     "
+                    style={{marginBottom:"10px"}}
                   >
 
                     <Icon size={28}/>

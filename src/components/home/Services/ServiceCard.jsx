@@ -168,7 +168,7 @@ export default function ServiceCard({ service, index }) {
         }}
       >
 
-        <p
+        {/* <p
           className="
             line-clamp-3
             text-[16px]
@@ -177,102 +177,130 @@ export default function ServiceCard({ service, index }) {
           "
         >
           {service.description}
-        </p>
+        </p> */}
 
 
 
         {/* Bottom Area */}
 
-        <div
-          className="
-            mt-auto
-            flex
-            items-end
-            justify-between
-            gap-5
-            pt-10
-          "
-        >
+       {/* Pricing Area */}
 
-          <div>
+<div
+  className="
+    mt-auto
+    rounded-3xl
+    border
+    border-[#123B67]/10
+    bg-gradient-to-br
+    from-[#F8FAFC]
+    to-white
+    p-6
+    shadow-sm
+    transition-all
+    duration-500
+    group-hover:border-[#C89B3C]/40
+    group-hover:shadow-xl
+  "
 
-            <span
-              className="
-                text-[11px]
-                font-semibold
-                uppercase
-                tracking-[0.3em]
-                text-[#98A2B3]
-              "
-            >
-              Starting From
-            </span>
+  style={{ padding: "20px" }}
+>
 
+  {/* Price & Duration */}
 
-            <h2
-              className="
-                mt-3
-                text-[36px]
-                font-black
-                leading-none
-                tracking-tight
-                text-[#123B67]
-                transition
-                duration-300
-                group-hover:text-[#C89B3C]
-                lg:text-[42px]
-              "
-            >
-              {service.price}
-            </h2>
+  <div className="flex items-start justify-between" style={{ marginBottom:"10px"}}>
 
-          </div>
+    <div style={{ marginBottom:"10px" , marginRight:"10px"}}>
 
+      <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-[#98A2B3]">
+        Starting From
+      </p>
 
+      <h2 className="mt-2 text-[30px] font-black leading-none text-[#123B67] transition-colors duration-300 group-hover:text-[#C89B3C]">
+        {service.startingPrice}
+      </h2>
 
-          <Link
-            href={service.link}
-            className="
-              group/btn
-              flex
-              items-center
-              gap-2
-              rounded-full
-              border
-              border-[#123B67]/15
-              px-5
-              py-3
-              text-sm
-              font-semibold
-              text-[#123B67]
-              transition-all
-              duration-300
-              hover:-translate-y-1
-              hover:bg-[#123B67]
-              hover:text-white
-            "
+    </div>
 
-            style={{
-              padding:"10px"
-            }}
-          >
+<div
+  className="
+    flex
+    items-center
+    gap-3
+    rounded-2xl
+    border
+    border-[#C89B3C]/30
+    bg-gradient-to-r
+    from-[#0E2F52]
+    via-[#123B67]
+    to-[#194E82]
+    px-5
+    py-3
+    shadow-[0_15px_40px_rgba(18,59,103,.35)]
+  "
+>
+  {/* Gold Glow */}
+  <div className="absolute -right-6 -top-6 h-16 w-16 rounded-full bg-[#F4C46A]/20 blur-2xl" />
 
-            Learn More
+  <div className="relative z-10" style={{padding:"7px"}}>
+    <p className="text-[10px] font-semibold uppercase tracking-[3px] text-[#F4C46A]">
+     Time
+    </p>
 
+    <p className="mt-2 text-lg font-bold text-white">
+      {service.duration}
+    </p>
+  </div>
+</div>
 
-            <HiArrowUpRight
-              size={20}
-              className="
-                transition
-                duration-300
-                group-hover/btn:translate-x-1
-                group-hover/btn:-translate-y-1
-              "
-            />
+  </div>
 
-          </Link>
+  {/* Divider */}
 
-        </div>
+  <div className="my-6 h-px bg-[#123B67]/10" />
+
+  {/* CTA */}
+
+<Link
+  href={service.link}
+  className="
+    group/btn
+    flex
+    items-center
+    justify-end
+    rounded-2xl
+    bg-gradient-to-r
+    from-[#B8860B]
+    via-[#D4A017]
+    to-[#F4C46A]
+    px-5
+    py-4
+    font-semibold
+    text-[#123B67]
+    shadow-[0_12px_30px_rgba(212,160,23,.35)]
+    transition-all
+    duration-300
+    hover:-translate-y-1
+    hover:shadow-[0_18px_40px_rgba(212,160,23,.45)]
+    hover:from-[#C9971A]
+    hover:via-[#E3B23C]
+    hover:to-[#FFD56A]
+  "
+  style={{ width: "fit-content", marginTop:"10px",padding:"8px" }}
+>
+  <span style={{color:"white"}}>Book Now</span>
+
+  <HiArrowUpRight
+    size={22}
+    className="
+      transition-transform
+      duration-300
+      group-hover/btn:translate-x-1
+      group-hover/btn:-translate-y-1
+    "
+  />
+</Link>
+
+</div>
 
 
       </div>
