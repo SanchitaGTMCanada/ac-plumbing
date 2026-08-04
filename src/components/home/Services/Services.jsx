@@ -7,7 +7,7 @@ import services from "./servicesData";
 
 export default function Services() {
   return (
-    <section className="relative overflow-hidden bg-[#F7F9FC] py-36">
+    <section className="relative overflow-hidden bg-[#F7F9FC] py-36" id="services">
 
       {/* Background */}
 

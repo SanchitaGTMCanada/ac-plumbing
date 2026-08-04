@@ -25,14 +25,27 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavigation = (e, href) => {
+    e.preventDefault();
+
+    const section = document.querySelector(href);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    setOpen(false);
+  };
+
   return (
     <>
       <header
         className={`fixed top-6 left-0 w-full z-50 flex justify-center transition-all duration-500 ${
           sticky ? "py-3" : "py-5"
         }`}
-
-      
       >
         <Container>
           <div
@@ -50,13 +63,13 @@ export default function Header() {
                   : "bg-white/10 backdrop-blur-xl border border-white/20"
               }
             `}
-
-            style={{paddingLeft:"20px", paddingRight:"20px"}}
+            style={{ paddingLeft: "20px", paddingRight: "20px" }}
           >
             {/* Logo */}
             <div className="flex h-full items-center flex-shrink-0">
               <Link
-                href="/"
+                href="#home"
+                onClick={(e) => handleNavigation(e, "#home")}
                 className="flex h-full items-center justify-center"
               >
                 <Image
@@ -84,7 +97,8 @@ export default function Header() {
                 <Link
                   key={item.title}
                   href={item.href}
-                 className={`group relative text-[16px] font-medium transition-all duration-300 ${
+                  onClick={(e) => handleNavigation(e, item.href)}
+                  className={`group relative text-[16px] font-medium transition-all duration-300 ${
                     sticky
                       ? "text-[#123B67] hover:text-[var(--primary)]"
                       : "!text-white hover:!text-[#F4C46A]"
@@ -128,7 +142,10 @@ export default function Header() {
         </Container>
       </header>
 
-      <MobileMenu open={open}  onClose={() => setOpen(false)}/>
+      <MobileMenu
+        open={open}
+        onClose={() => setOpen(false)}
+      />
     </>
   );
 }

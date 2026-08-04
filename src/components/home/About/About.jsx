@@ -4,7 +4,7 @@ import AboutImages from "./AboutImages";
 
 export default function About() {
   return (
-    <section className="relative overflow-hidden bg-white py-40">
+    <section className="relative overflow-hidden bg-white py-40"  id="about">
 
       {/* ================= Background Blur ================= */}
 

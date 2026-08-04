@@ -7,221 +7,258 @@ import {
   HiOutlineMapPin,
 } from "react-icons/hi2";
 
+const footerNavigation = [
+  {
+    title: "Home",
+    href: "#home",
+  },
+  {
+    title: "About Us",
+    href: "#about",
+  },
+  {
+    title: "Services",
+    href: "#services",
+  },
+  {
+    title: "Projects",
+    href: "#projects",
+  },
+  {
+    title: "Contact",
+    href: "#contact",
+  },
+];
+
+const services = [
+  {
+    title: "Plumbing Repair",
+    href: "#services",
+  },
+  {
+    title: "Heating Services",
+    href: "#services",
+  },
+  {
+    title: "Drain Cleaning",
+    href: "#services",
+  },
+  {
+    title: "Emergency Plumbing",
+    href: "#services",
+  },
+  {
+    title: "Installation",
+    href: "#services",
+  },
+];
 
 export default function Footer() {
 
+  const handleNavigation = (e, href) => {
+    e.preventDefault();
+
+    const section = document.querySelector(href);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
-    <footer className="bg-[#081F38] text-white" style={{marginTop:"50px"}}  >
+    <footer
+      className="bg-[#081F38] text-white"
+      style={{ marginTop: "50px" }}
+    >
 
       {/* Main */}
-  <div className="relative z-20 flex justify-center " style={{padding:"20px"}}>    
-     <div
-        className="
-          mx-auto
-          max-w-[1280px]
-          px-5
-          py-16
-          lg:px-8
-          lg:py-20
-        "
 
-       
+      <div
+        className="relative z-20 flex justify-center"
+        style={{ padding: "20px" }}
       >
 
         <div
           className="
-            grid
-            gap-12
-            lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]
+            mx-auto
+            max-w-[1280px]
+            px-5
+            py-16
+            lg:px-8
+            lg:py-20
           "
-
-           style={{padding:"20px"}}
         >
 
+          <div
+            className="
+              grid
+              gap-12
+              lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]
+            "
+            style={{ padding: "20px" }}
+          >
 
-          {/* Brand */}
+            {/* Brand */}
 
-          <div>
+            <div>
 
-            <h2
-              className="
-                text-3xl
-                font-black
-                tracking-tight
-              "
+              <h2
+                className="
+                  text-3xl
+                  font-black
+                  tracking-tight
+                "
+                style={{ color: "#C89B3C" }}
+              >
+                AC Plumbing
+              </h2>
 
-              style={{color:"#C89B3C"}}
-            >
-              AC Plumbing
-            </h2>
+              <div
+                className="
+                  mt-4
+                  h-[3px]
+                  w-14
+                  bg-[#C89B3C]
+                "
+              />
 
+              <p
+                className="
+                  mt-6
+                  max-w-sm
+                  leading-8
+                  text-white/60
+                "
+              >
+                Professional plumbing and heating services
+                delivering reliable solutions with quality
+                workmanship and trusted support.
+              </p>
 
-            <div
-              className="
-                mt-4
-                h-[3px]
-                w-14
-                bg-[#C89B3C]
-              "
-            />
+              <Link
+                href="#contact"
+                onClick={(e) => handleNavigation(e, "#contact")}
+                className="
+                  mt-8
+                  inline-flex
+                  rounded-full
+                  bg-[#C89B3C]
+                  px-7
+                  py-3.5
+                  font-semibold
+                  transition
+                  hover:bg-white
+                  hover:text-[#123B67]
+                "
+                style={{
+                  padding: "5px",
+                  marginTop: "10px",
+                }}
+              >
+                Request Service
+              </Link>
 
+            </div>
 
-            <p
-              className="
-                mt-6
-                max-w-sm
-                leading-8
-                text-white/60
-              "
-            >
-              Professional plumbing and heating services
-              delivering reliable solutions with quality
-              workmanship and trusted support.
-            </p>
+            {/* Navigation */}
 
+            <div>
 
-            <Link
-              href="#contact"
-              className="
-                mt-8
-                inline-flex
-                rounded-full
-                bg-[#C89B3C]
-                px-7
-                py-3.5
-                font-semibold
-                transition
-                hover:bg-white
-                hover:text-[#123B67]
-              "
-              style={{padding:"5px",marginTop:"10px"}}
-            >
-              Request Service
-            </Link>
+              <h3
+                className="
+                  text-lg
+                  font-bold
+                "
+                style={{ color: "#C89B3C" }}
+              >
+                Navigation
+              </h3>
 
+              <ul
+                className="
+                  mt-6
+                  space-y-4
+                "
+              >
 
-          </div>
+                {footerNavigation.map((item) => (
 
-
-
-
-          {/* Navigation */}
-
-          <div>
-
-            <h3
-              className="
-                text-lg
-                font-bold
-              "
-
-              style={{color:"#C89B3C"}}
-            >
-              Navigation
-            </h3>
-
-
-            <ul
-              className="
-                mt-6
-                space-y-4
-              "
-            >
-
-              {
-                [
-                  "Home",
-                  "About Us",
-                  "Services",
-                  "Projects",
-                  "Contact",
-                ].map(item=>(
-
-                  <li key={item}>
+                  <li key={item.title}>
 
                     <Link
-                      href="#"
+                      href={item.href}
+                      onClick={(e) =>
+                        handleNavigation(e, item.href)
+                      }
                       className="
                         text-white/60
                         transition
                         hover:text-[#C89B3C]
                       "
                     >
-                      {item}
+                      {item.title}
                     </Link>
 
                   </li>
 
-                ))
-              }
+                ))}
 
-            </ul>
+              </ul>
 
+            </div>
 
-          </div>
+            {/* Services */}
 
+            <div>
 
+              <h3
+                className="
+                  text-lg
+                  font-bold
+                "
+                style={{ color: "#C89B3C" }}
+              >
+                Services
+              </h3>
 
+              <ul
+                className="
+                  mt-6
+                  space-y-4
+                "
+              >
 
-          {/* Services */}
+                {services.map((item) => (
 
-          <div>
-
-            <h3
-              className="
-                text-lg
-                font-bold
-              "
-              style={{color:"#C89B3C"}}
-            >
-              Services
-            </h3>
-
-
-            <ul
-              className="
-                mt-6
-                space-y-4
-              "
-            >
-
-              {
-                [
-                  "Plumbing Repair",
-                  "Heating Services",
-                  "Drain Cleaning",
-                  "Emergency Plumbing",
-                  "Installation",
-                ].map(item=>(
-
-                  <li key={item}>
+                  <li key={item.title}>
 
                     <Link
-                      href="#"
+                      href={item.href}
+                      onClick={(e) =>
+                        handleNavigation(e, item.href)
+                      }
                       className="
                         text-white/60
                         transition
                         hover:text-[#C89B3C]
                       "
                     >
-                      {item}
+                      {item.title}
                     </Link>
 
                   </li>
 
-                ))
-              }
+                ))}
 
-            </ul>
+              </ul>
 
+            </div>
 
-          </div>
-
-
-
-
-
-          {/* Contact */}
+            {/* Contact */}
+                      {/* Contact */}
 
           <div>
 
@@ -232,7 +269,7 @@ export default function Footer() {
                 p-7
                 backdrop-blur-sm
               "
-              style={{padding:"20px"}}
+              style={{ padding: "20px" }}
             >
 
               <span
@@ -240,12 +277,10 @@ export default function Footer() {
                   text-xl
                   font-bold
                 "
-
-                style={{color:"#C89B3C"}}
+                style={{ color: "#C89B3C" }}
               >
                 Contact Us
               </span>
-
 
               <div
                 className="
@@ -253,7 +288,6 @@ export default function Footer() {
                   space-y-5
                 "
               >
-
 
                 <div className="flex gap-4">
 
@@ -276,7 +310,6 @@ export default function Footer() {
                       Call Us
                     </span>
 
-
                     <p className="mt-1 text-white/80">
                       +1 234 567 890
                     </p>
@@ -284,9 +317,6 @@ export default function Footer() {
                   </div>
 
                 </div>
-
-
-
 
                 <div className="flex gap-4">
 
@@ -309,7 +339,6 @@ export default function Footer() {
                       Email
                     </span>
 
-
                     <p className="mt-1 text-white/80">
                       info@example.com
                     </p>
@@ -317,9 +346,6 @@ export default function Footer() {
                   </div>
 
                 </div>
-
-
-
 
                 <div className="flex gap-4">
 
@@ -342,7 +368,6 @@ export default function Footer() {
                       Location
                     </span>
 
-
                     <p className="mt-1 text-white/80">
                       Canada
                     </p>
@@ -351,57 +376,64 @@ export default function Footer() {
 
                 </div>
 
-
               </div>
-
 
             </div>
 
           </div>
 
-
         </div>
 
-
-     
-
-
-
-      {/* Bottom */}
-
-      <div
-        className="
-          border-t
-          border-white/10
-        "
-
-         style={{padding:"20px"}}
-      >
+        {/* Bottom */}
 
         <div
           className="
-            mx-auto
-            max-w-[1280px]
-            px-5
-            py-6
-            text-sm
-            text-white/50
-            lg:px-8
+            border-t
+            border-white/10
           "
+          style={{ padding: "20px" }}
         >
 
-          © {new Date().getFullYear()} AC Plumbing. All rights reserved.
+          <div
+            className="
+              mx-auto
+              max-w-[1280px]
+              px-5
+              py-6
+              text-sm
+              text-white/50
+              lg:px-8
+              flex
+              flex-col
+              gap-4
+              md:flex-row
+              md:items-center
+              md:justify-between
+            "
+          >
+
+            <span>
+              © {new Date().getFullYear()} AC Plumbing. All rights reserved.
+            </span>
+
+            <Link
+              href="#home"
+              onClick={(e) => handleNavigation(e, "#home")}
+              className="
+                transition
+                hover:text-[#C89B3C]
+              "
+            >
+              Back to Top ↑
+            </Link>
+
+          </div>
 
         </div>
 
       </div>
-      </div>
 
-  </div>
-    
-          
-   
-
+    </div>
 
     </footer>
   );
