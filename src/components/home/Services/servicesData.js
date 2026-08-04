@@ -23,7 +23,7 @@ const services = [
 
   {
     id: 2,
-    image: "/assets/services/boiler.jpg",
+    image: "/assets/services/full-boiler-maintanance.jpg",
     title: "Full Boiler Maintenance",
     description:
       "Complete inspection, cleaning and maintenance to maximize boiler efficiency and reliability.",
@@ -36,7 +36,7 @@ const services = [
 
   {
     id: 3,
-    image: "/assets/services/boiler.jpg",
+    image: "/assets/services/combi-boiler.jpg",
     title: "Combi Boiler Maintenance",
     description:
       "Annual servicing and preventive maintenance for combi boiler systems.",
@@ -62,7 +62,7 @@ const services = [
 
   {
     id: 5,
-    image: "/assets/services/furnace.jpg",
+    image: "/assets/services/annual-fernace.jpg",
     title: "Annual Furnace Maintenance",
     description:
       "Annual inspection, cleaning and tune-up for improved heating efficiency.",
@@ -75,7 +75,7 @@ const services = [
 
   {
     id: 6,
-    image: "/assets/services/furnace.jpg",
+    image: "/assets/services/modulars-home.jpg",
     title: "Modular Home Furnace Maintenance",
     description:
       "Specialized furnace maintenance services designed for modular and manufactured homes.",
@@ -101,7 +101,7 @@ const services = [
 
   {
     id: 8,
-    image: "/assets/services/boiler.jpg",
+    image: "/assets/services/mua-boiler-service.jpg",
     title: "Mid-Efficiency Boiler Maintenance",
     description:
       "Maintenance services designed specifically for mid-efficiency boiler systems.",
@@ -114,7 +114,7 @@ const services = [
 
   {
     id: 9,
-    image: "/assets/services/water-heater.jpg",
+    image: "/assets/services/direct-vent.jpg",
     title: "Direct Vent Hot Water Tank Maintenance",
     description:
       "Inspection, cleaning and servicing for direct vent hot water tank systems.",
@@ -127,7 +127,7 @@ const services = [
 
   {
     id: 10,
-    image: "/assets/services/fireplace.jpg",
+    image: "/assets/services/annual-gas.jpg",
     title: "Annual Gas Fireplace Maintenance",
     description:
       "Comprehensive annual maintenance to keep gas fireplaces operating safely.",
@@ -140,7 +140,7 @@ const services = [
 
   {
     id: 11,
-    image: "/assets/services/hrv.jpg",
+    image: "/assets/services/annual-hrv.jpg",
     title: "Annual HRV Maintenance",
     description:
       "Cleaning, airflow testing and maintenance of Heat Recovery Ventilation systems.",
@@ -153,7 +153,7 @@ const services = [
 
   {
     id: 12,
-    image: "/assets/services/humdifier.jpg",
+    image: "/assets/services/boiler.jpg",
     title: "Annual Humidifier Maintenance",
     description:
       "Routine servicing to improve indoor air quality and extend humidifier life.",
@@ -179,7 +179,7 @@ const services = [
 
   {
     id: 14,
-    image: "/assets/services/hvac.jpg",
+    image: "/assets/services/mua-boiler-service.jpg",
     title: "MUA + Boiler + Water Heater Package",
     description:
       "Comprehensive maintenance package covering MUA testing, boiler service and water heater maintenance.",
