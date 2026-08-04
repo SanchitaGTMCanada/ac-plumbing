@@ -17,39 +17,39 @@ export default function MobileMenu({ open, onClose }) {
   return (
     <AnimatePresence>
       {open && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.35 }}
-          className="fixed inset-0 z-[999] lg:hidden"
-        >
-          {/* Overlay */}
-<div
-    className="absolute inset-0 bg-[#0B2746]/35 backdrop-blur-3xl"
-    onClick={onClose}
-/>
-
-          {/* Menu */}
-     <motion.div
-  initial={{
-    opacity: 0,
-    y: -30,
-  }}
-  animate={{
-    opacity: 1,
-    y: 0,
-  }}
-  exit={{
-    opacity: 0,
-    y: -30,
-  }}
-  transition={{
-    duration: 0.45,
-    ease: [0.22, 1, 0.36, 1], // smooth easeOutExpo
-  }}
-className="relative flex min-h-screen max-h-screen flex-col overflow-y-auto overflow-x-hidden px-6 scrollbar-hide"
+    <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.25 }}
+  className="fixed inset-0 z-[999] lg:hidden overflow-y-auto scrollbar-hide"
 >
+  {/* Overlay */}
+  <div
+    className="fixed inset-0 bg-[#0B2746]/35 backdrop-blur-3xl"
+    onClick={onClose}
+  />
+
+  {/* Menu */}
+  <motion.div
+    initial={{
+      opacity: 0,
+      y: -40,
+    }}
+    animate={{
+      opacity: 1,
+      y: 0,
+    }}
+    exit={{
+      opacity: 0,
+      y: -40,
+    }}
+    transition={{
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1],
+    }}
+    className="relative z-10 min-h-screen px-6 pb-10"
+  >
             {/* Close */}
             <button
               onClick={onClose}
