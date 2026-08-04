@@ -144,28 +144,30 @@ const handleNavigation = (e, href) => {
                 workmanship and trusted support.
               </p>
 
-              <Link
-                href="#contact"
-                onClick={(e) => handleNavigation(e, "#contact")}
-                className="
-                  mt-8
-                  inline-flex
-                  rounded-full
-                  bg-[#C89B3C]
-                  px-7
-                  py-3.5
-                  font-semibold
-                  transition
-                  hover:bg-white
-                  hover:text-[#123B67]
-                "
-                style={{
-                  padding: "5px",
-                  marginTop: "10px",
-                }}
-              >
-                Request Service
-              </Link>
+          <Link
+  href="#contact"
+  onClick={(e) => handleNavigation(e, "#contact")}
+  className="
+    mt-8
+    inline-flex
+    rounded-full
+    bg-[#C89B3C]
+    px-7
+    py-3.5
+    font-semibold
+    text-white
+    transition-all
+    duration-300
+    hover:bg-white
+    hover:!text-[#123B67]
+  "
+  style={{
+    padding: "5px",
+    marginTop: "10px",
+  }}
+>
+  Request Service
+</Link>
 
             </div>
 

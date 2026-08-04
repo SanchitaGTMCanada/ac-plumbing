@@ -8,6 +8,7 @@ import {
   HiCheckBadge,
   HiCurrencyDollar,
 } from "react-icons/hi2";
+import Container from "@/components/ui/Container/Container";
 
 
 const features = [
@@ -61,8 +62,11 @@ export default function WhyChoose() {
          
       />
 
-<div className="relative z-20 flex justify-center ">    <div
-        className="
+<div className="relative z-20 flex justify-center ">   
+
+
+        {/* LEFT IMAGE */}
+        <Container   className="
           mx-auto
           grid
           max-w-[1280px]
@@ -72,12 +76,8 @@ export default function WhyChoose() {
           lg:grid-cols-2
           lg:px-8
         "
-        style={{marginTop:"50px"}}
-      >
-
-
-        {/* LEFT IMAGE */}
-
+        style={{marginTop:"50px"}}>
+          
         <motion.div
           initial={{opacity:0,x:-50}}
           whileInView={{opacity:1,x:0}}
@@ -409,8 +409,11 @@ export default function WhyChoose() {
 
         </motion.div>
 
+        </Container>
 
-      </div></div>
+
+
+      </div>
   
 
     </section>
