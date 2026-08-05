@@ -61,17 +61,23 @@ export default function Left() {
         </span>
 
         {/* Heading */}
-
-        <h2
-          className="text-[34px] lg:text-[42px] font-bold leading-tight"
-          style={{
-            marginTop: "22px", color:"white"
-          }}
-        >
-          Book Your
-          <br />
-          Service Today
-        </h2>
+<h2
+  className="text-[34px] lg:text-[42px] font-bold leading-tight"
+  style={{
+    marginTop: "22px",
+    background:
+      "linear-gradient(90deg, #FDF3C7 0%, #E7D07A 20%, #C89B3C 50%, #B68923 75%, #F7E6A4 100%)",
+    WebkitBackgroundClip: "text",
+    backgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    display: "inline-block",
+  }}
+>
+  Book Your
+  <br />
+  Service Today
+</h2>
+      
 
         {/* Description */}
 
