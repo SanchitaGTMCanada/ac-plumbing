@@ -10,12 +10,14 @@ import Container from "@/components/ui/Container/Container";
 import Button from "@/components/ui/Button/Button";
 import navigation from "@/data/navigation";
 import MobileMenu from "./MobileMenu";
+import CareerModal from "@/components/career/CareerModal";
 
 import { HiPhone } from "react-icons/hi2";
 
 export default function Header() {
   const [sticky, setSticky] = useState(false);
   const [open, setOpen] = useState(false);
+  const [careerOpen, setCareerOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,40 +95,70 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Navigation */}
-            <nav className="hidden lg:flex items-center justify-center gap-12">
-        {navigation
-  .filter((item) => item.title !== "Home")
-  .map((item) => (
-    <Link
-      key={item.title}
-      href={item.href}
-      onClick={(e) => handleNavigation(e, item.href)}
-      className={`group relative text-[16px] font-medium transition-all duration-300 ${
+        {/* Navigation */}
+<nav className="hidden lg:flex items-center justify-center gap-12">
+  {navigation
+    .filter((item) => item.title !== "Home")
+    .map((item) => {
+      const navClass = `group relative text-[16px] font-medium transition-all duration-300 ${
         sticky
           ? "text-[#123B67] hover:text-[var(--primary)]"
           : "!text-white hover:!text-[#F4C46A]"
-      }`}
-    >
-      {item.title}
+      }`;
 
-      <span
-        className="
-          absolute
-          left-0
-          -bottom-2
-          h-[2px]
-          w-0
-          bg-[var(--primary)]
-          transition-all
-          duration-300
-          group-hover:w-full
-        "
-      />
-    </Link>
-  ))}
-            </nav>
+      if (item.title === "Careers") {
+        return (
+          <button
+            key={item.title}
+            type="button"
+            onClick={() => setCareerOpen(true)}
+            className={navClass}
+          >
+            {item.title}
 
+            <span
+              className="
+                absolute
+                left-0
+                -bottom-2
+                h-[2px]
+                w-0
+                bg-[var(--primary)]
+                transition-all
+                duration-300
+                group-hover:w-full
+              "
+            />
+          </button>
+        );
+      }
+
+      return (
+        <Link
+          key={item.title}
+          href={item.href}
+          onClick={(e) => handleNavigation(e, item.href)}
+          className={navClass}
+        >
+          {item.title}
+
+          <span
+            className="
+              absolute
+              left-0
+              -bottom-2
+              h-[2px]
+              w-0
+              bg-[var(--primary)]
+              transition-all
+              duration-300
+              group-hover:w-full
+            "
+          />
+        </Link>
+      );
+    })}
+</nav>
             {/* Right Side */}
             <div className="flex items-center justify-end flex-shrink-0 gap-4">
               <div className="hidden lg:block">
@@ -154,6 +186,10 @@ export default function Header() {
         open={open}
         onClose={() => setOpen(false)}
       />
+      <CareerModal
+  open={careerOpen}
+  onClose={() => setCareerOpen(false)}
+/>
     </>
   );
 }

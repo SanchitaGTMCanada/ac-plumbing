@@ -19,6 +19,10 @@ const navigation = [
     title: "Contact",
     href: "#contact",
   },
+   {
+    title: "Careers",
+    href: "#careers",
+  },
 ];
 
 export default navigation;
