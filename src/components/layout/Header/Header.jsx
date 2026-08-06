@@ -11,8 +11,9 @@ import Button from "@/components/ui/Button/Button";
 import navigation from "@/data/navigation";
 import MobileMenu from "./MobileMenu";
 import CareerModal from "@/components/career/CareerModal";
+import { HiPhone, HiArrowTopRightOnSquare } from "react-icons/hi2";
 
-import { HiPhone } from "react-icons/hi2";
+
 
 export default function Header() {
   const [sticky, setSticky] = useState(false);
@@ -55,7 +56,7 @@ export default function Header() {
           <div
             className={`
               flex items-center justify-between
-              lg:grid lg:grid-cols-[280px_1fr_220px]
+             lg:grid lg:grid-cols-[165px_minmax(0,1fr)_330px]
               min-h-[100px]
               px-4 lg:px-8
               rounded-2xl
@@ -71,11 +72,11 @@ export default function Header() {
           >
             {/* Logo */}
             <div
-  className="flex h-full items-center flex-shrink-0"
-  style={{
-    maxWidth: "260px",
-  }}
->
+              className="flex h-full items-center flex-shrink-0"
+              style={{
+                maxWidth: "160px",
+              }}
+            >
               <Link
                 href="#home"
                 onClick={(e) => handleNavigation(e, "#home")}
@@ -101,7 +102,7 @@ export default function Header() {
             </div>
 
         {/* Navigation */}
-<nav className="hidden lg:flex items-center justify-center gap-12">
+<nav className="hidden lg:flex items-center justify-center gap-8">
   {navigation
     .filter((item) => item.title !== "Home")
     .map((item) => {
@@ -165,14 +166,79 @@ export default function Header() {
     })}
 </nav>
             {/* Right Side */}
-            <div className="flex items-center justify-end flex-shrink-0 gap-4">
-              <div className="hidden lg:block">
-  <Button href="tel:+18674471500">
-    <span className="flex items-center justify-center gap-2">
+            <div className="flex items-center justify-end gap-3 min-w-[350px]" >
+           <div className="hidden lg:flex items-center gap-3" style={{ marginRight: "5px" }}>
+
+  {/* External Website */}
+<a
+  href="https://auroraconstruction.ca/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    group
+    relative
+    flex
+    h-[44px]
+    items-center
+    justify-center
+    gap-2
+    overflow-hidden
+    rounded-full
+    border
+    border-[#D9A63A]
+    bg-gradient-to-r
+    from-[#FFF1B8]
+    via-[#F4C46A]
+    to-[#B8821F]
+    px-5
+    font-semibold
+    text-[#123B67]
+    shadow-[0_10px_30px_rgba(244,196,106,.35)]
+    transition-all
+    duration-300
+    hover:-translate-y-1
+    hover:shadow-[0_18px_40px_rgba(244,196,106,.45)]
+  "
+  style={{ padding: "5px 7px" }}
+>
+  {/* Silver Glaze */}
+  <span
+    className="
+      absolute
+      top-0
+      -left-[120%]
+      h-full
+      w-[40%]
+      -skew-x-12
+      bg-gradient-to-r
+      from-transparent
+      via-white/80
+      to-transparent
+      transition-all
+      duration-700
+      ease-out
+      group-hover:left-[130%]
+    "
+  />
+
+  <HiArrowTopRightOnSquare
+    size={18}
+    className="relative z-10"
+  />
+
+  <span className="relative z-10 whitespace-nowrap">
+    Construction
+  </span>
+</a>
+  {/* Call */}
+
+  <Button href="tel:+18674471500"  >
+    <span className="flex items-center gap-2">
       <HiPhone size={18} />
       <span>Call Now</span>
     </span>
   </Button>
+
 </div>
               <button
                 onClick={() => setOpen(!open)}
