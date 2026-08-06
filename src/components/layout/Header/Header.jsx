@@ -166,7 +166,7 @@ export default function Header() {
     })}
 </nav>
             {/* Right Side */}
-            <div className="flex items-center justify-end gap-3 min-w-[350px]" >
+            <div className="flex items-center justify-end gap-3 lg:min-w-[350px]">
            <div className="hidden lg:flex items-center gap-3" style={{ marginRight: "5px" }}>
 
   {/* External Website */}
