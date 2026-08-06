@@ -191,7 +191,8 @@ export default function CareerModal({
                   className="
                     absolute
                     right-5
-                    top-5
+                    top-3
+                    
                     z-50
                     flex
                     h-11
@@ -218,11 +219,11 @@ export default function CareerModal({
 
                   <div className="max-h-[90vh] overflow-y-auto p-6 sm:p-8 lg:p-10" style={{padding:"20px"}}>
 
-                    <h3 className="text-3xl font-bold text-[#123B67]">
+                    <h3 className="text-3xl font-bold text-[#123B67]" style={{marginLeft:"4px"}}>
                       Apply Now
                     </h3>
 
-                    <p className="mt-3 text-[#667085]">
+                    <p className="mt-3 text-[#667085]" style={{marginLeft:"4px" ,marginBottom:"10px"}}>
                       Fill in the details below and upload your resume.
                     </p>
 
@@ -236,9 +237,9 @@ export default function CareerModal({
 
   {/* Full Name */}
 
-  <div>
+  <div style={{marginBottom:"15px"}}>
 
-    <label className="mb-2 block text-sm font-semibold text-[#123B67]">
+    <label className="mb-2 block text-sm font-semibold text-[#123B67]" style={{marginBottom:"7px", paddingLeft:"5px"}}>
       Full Name *
     </label>
 
@@ -273,6 +274,7 @@ export default function CareerModal({
           focus:ring-4
           focus:ring-[#C89B3C]/10
         "
+        style={{paddingLeft:"40px"}}
       />
 
     </div>
@@ -287,9 +289,9 @@ export default function CareerModal({
 
   {/* Phone */}
 
-  <div>
+  <div style={{marginBottom:"15px"}}>
 
-    <label className="mb-2 block text-sm font-semibold text-[#123B67]">
+    <label className="mb-2 block text-sm font-semibold text-[#123B67]" style={{marginBottom:"7px", paddingLeft:"5px"}}>
       Phone Number *
     </label>
 
@@ -324,6 +326,7 @@ export default function CareerModal({
           focus:ring-4
           focus:ring-[#C89B3C]/10
         "
+           style={{paddingLeft:"40px"}}
       />
 
     </div>
@@ -343,8 +346,8 @@ export default function CareerModal({
 
   {/* Email */}
 
-  <div>
-    <label className="mb-2 block text-sm font-semibold text-[#123B67]">
+  <div style={{marginBottom:"15px"}}>
+    <label className="mb-2 block text-sm font-semibold text-[#123B67]" style={{marginBottom:"7px", paddingLeft:"5px"}}>
       Email Address *
     </label>
 
@@ -379,6 +382,7 @@ export default function CareerModal({
           focus:ring-4
           focus:ring-[#C89B3C]/10
         "
+           style={{paddingLeft:"40px"}}
       />
 
     </div>
@@ -393,9 +397,9 @@ export default function CareerModal({
 
   {/* Job */}
 
-  <div>
+  <div style={{marginBottom:"15px"}}>
 
-    <label className="mb-2 block text-sm font-semibold text-[#123B67]">
+    <label className="mb-2 block text-sm font-semibold text-[#123B67]" style={{marginBottom:"7px", paddingLeft:"5px"}}>
       Job Position *
     </label>
 
@@ -430,6 +434,7 @@ export default function CareerModal({
           focus:ring-4
           focus:ring-[#C89B3C]/10
         "
+           style={{paddingLeft:"40px"}}
       />
 
     </div>
@@ -445,9 +450,9 @@ export default function CareerModal({
 </div>
 {/* Resume Upload */}
 
-<div>
+<div style={{marginBottom:"15px"}}>
 
-  <label className="mb-2 block text-sm font-semibold text-[#123B67]">
+  <label className="mb-2 block text-sm font-semibold text-[#123B67]" style={{marginLeft:"5px", marginBottom:"7px"}}>
     Upload Resume *
   </label>
 
@@ -476,7 +481,7 @@ export default function CareerModal({
     "
   >
 
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4" style={{padding:"5px"}}>
 
       <div
         className="
@@ -528,6 +533,7 @@ export default function CareerModal({
         group-hover:bg-[#C89B3C]
         md:block
       "
+          style={{padding:"5px", marginRight:"5px"}}
     >
       Browse
     </span>
@@ -551,8 +557,8 @@ export default function CareerModal({
 </div>
 {/* Message */}
 
-<div>
-  <label className="mb-2 block text-sm font-semibold text-[#123B67]">
+<div style={{marginBottom:"15px"}}>
+  <label className="mb-2 block text-sm font-semibold text-[#123B67]" style={{marginLeft:"5px", marginBottom:"7px"}}>
     Message (Optional)
   </label>
 
@@ -589,6 +595,7 @@ export default function CareerModal({
         focus:ring-4
         focus:ring-[#C89B3C]/10
       "
+      style={{paddingLeft:"40px", paddingTop:"15px"}}
     />
 
   </div>
@@ -597,7 +604,6 @@ export default function CareerModal({
 {/* Submit */}
 
 <div className="pt-2">
-
   <button
     type="submit"
     disabled={loading}
@@ -611,26 +617,63 @@ export default function CareerModal({
       justify-center
       overflow-hidden
       rounded-2xl
+      border
+      border-[#D9A63A]
       bg-gradient-to-r
-      from-[#FFE9A8]
+      from-[#FFF1B8]
       via-[#F4C46A]
-      to-[#C89B3C]
+      to-[#B8821F]
       font-semibold
       text-[#123B67]
+      shadow-[0_15px_35px_rgba(200,155,60,.35)]
       transition-all
-      duration-300
+      duration-500
       hover:-translate-y-1
-      hover:shadow-[0_20px_40px_rgba(200,155,60,.35)]
+      hover:scale-[1.01]
+      hover:shadow-[0_25px_50px_rgba(200,155,60,.45)]
+      active:scale-[0.98]
       disabled:cursor-not-allowed
       disabled:opacity-70
     "
   >
+    {/* Silver Glaze */}
 
-    <span className="absolute inset-0 bg-white/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+    <span
+      className="
+        absolute
+        top-0
+        -left-[130%]
+        h-full
+        w-[40%]
+        -skew-x-12
+        bg-gradient-to-r
+        from-transparent
+        via-white/80
+        to-transparent
+        transition-all
+        duration-700
+        ease-out
+        group-hover:left-[140%]
+      "
+    />
+
+    {/* Soft Glow */}
+
+    <span
+      className="
+        absolute
+        inset-0
+        rounded-2xl
+        bg-white/10
+        opacity-0
+        transition-opacity
+        duration-300
+        group-hover:opacity-100
+      "
+    />
 
     {loading ? (
-      <div className="flex items-center gap-3">
-
+      <div className="relative z-10 flex items-center gap-3">
         <div
           className="
             h-5
@@ -642,18 +685,17 @@ export default function CareerModal({
             border-t-transparent
           "
         />
-
         <span>Submitting...</span>
-
       </div>
     ) : (
-      <span className="relative z-10">
+      <span className="relative z-10 flex items-center gap-2 tracking-wide">
         Submit Application
+        <span className="transition-transform duration-300 group-hover:translate-x-1">
+          →
+        </span>
       </span>
     )}
-
   </button>
-
 </div>
 
 </form>
