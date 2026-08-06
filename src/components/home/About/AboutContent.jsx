@@ -187,7 +187,7 @@ export default function AboutContent() {
 
       <div className="mt-14 flex flex-wrap items-center gap-8">
 
-        <Button href="/quote">
+        <Button href="#booking">
           Get Free Estimate
         </Button>
 

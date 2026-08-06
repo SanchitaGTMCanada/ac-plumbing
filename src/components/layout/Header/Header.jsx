@@ -120,7 +120,7 @@ export default function Header() {
             onClick={() => setCareerOpen(true)}
             className={navClass}
           >
-            {item.title}
+            {item.title === "Careers" ? "Join Us" : item.title}
 
             <span
               className="
@@ -227,17 +227,36 @@ export default function Header() {
   />
 
   <span className="relative z-10 whitespace-nowrap">
-    Construction
+   Aurora Construction
   </span>
 </a>
   {/* Call */}
 
-  <Button href="tel:+18674471500"  >
-    <span className="flex items-center gap-2">
-      <HiPhone size={18} />
-      <span>Call Now</span>
-    </span>
-  </Button>
+<Button
+  href="#booking"
+  className="
+    silver-glaze
+    group
+    relative
+    overflow-hidden
+    rounded-full
+    bg-gradient-to-r
+    from-[#C1121F]
+    via-[#D62839]
+    to-[#E63946]
+    text-white
+    shadow-[0_15px_40px_rgba(214,40,57,.35)]
+    transition-all
+    duration-300
+    hover:-translate-y-1
+    hover:shadow-[0_20px_50px_rgba(214,40,57,.45)]
+  "
+>
+  <span className="relative z-10 flex items-center gap-2">
+    {/* <HiPhone size={18} /> */}
+    <span>Book Now</span>
+  </span>
+</Button>
 
 </div>
               <button

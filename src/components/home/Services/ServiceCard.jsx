@@ -260,7 +260,7 @@ export default function ServiceCard({ service, index }) {
   {/* CTA */}
 
 <Link
-  href={service.link}
+  href="tel:+18674471500"
   className="
     group/btn
     flex
@@ -284,12 +284,16 @@ export default function ServiceCard({ service, index }) {
     hover:via-[#E3B23C]
     hover:to-[#FFD56A]
   "
-  style={{ width: "fit-content", marginTop:"10px",padding:"8px" }}
+  style={{
+    width: "fit-content",
+    marginTop: "10px",
+    padding: "8px",
+  }}
 >
- <span className="flex items-center gap-2" style={{ color: "white" }}>
-  <HiPhone size={18} />
-  Call Now
-</span>
+  <span className="flex items-center gap-2 text-white">
+    <HiPhone size={18} />
+    Call Now
+  </span>
 
   <HiArrowUpRight
     size={22}

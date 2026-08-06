@@ -206,3 +206,33 @@ html {
 .swiper-slide {
   background: transparent !important;
 }
+
+@keyframes silverGlaze {
+  0%, 15% {
+    transform: translateX(-250%) skewX(-20deg);
+  }
+
+  35% {
+    transform: translateX(450%) skewX(-20deg);
+  }
+
+  100% {
+    transform: translateX(450%) skewX(-20deg);
+  }
+}
+
+.silver-glaze::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 35%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.95),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: silverGlaze 3.5s ease-in-out infinite;
+  pointer-events: none;
+}

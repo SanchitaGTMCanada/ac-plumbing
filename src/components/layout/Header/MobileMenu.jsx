@@ -242,7 +242,78 @@ export default function MobileMenu({ open, onClose ,  onCareerClick,}) {
 </Link>
 
                 </div>
+  
+
+<div className="mt-6 flex flex-col gap-3" style={{ marginTop: "10px" }}>
+
+  {/* Aurora Construction */}
+
+  <Link
+    href="https://auroraconstruction.ca/"
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={onClose}
+    className="
+      group
+      relative
+      flex
+      items-center
+      justify-center
+      gap-2
+      overflow-hidden
+      rounded-2xl
+      border
+      border-[#D9A63A]
+      bg-gradient-to-r
+      from-[#FFF1B8]
+      via-[#F4C46A]
+      to-[#B8821F]
+      px-6
+      py-4
+      font-semibold
+      text-[#123B67]
+      shadow-[0_12px_30px_rgba(244,196,106,.35)]
+      transition-all
+      duration-300
+      hover:-translate-y-1
+      hover:shadow-[0_18px_40px_rgba(244,196,106,.45)]
+    "
+    style={{ padding: "10px" }}
+  >
+    {/* Silver Glaze */}
+
+    <span
+      className="
+        absolute
+        inset-y-0
+        -left-[120%]
+        w-[35%]
+        -skew-x-12
+        bg-gradient-to-r
+        from-transparent
+        via-white/90
+        to-transparent
+        silver-glaze
+      "
+    />
+
+
+    <span className="relative z-10">
+      Aurora Construction
+    </span>
+    
+    <HiArrowUpRight
+      size={18}
+      className="relative z-10"
+    />
+  </Link>
+
+ 
+
+
+</div>
               </div>
+              
             </motion.div>
                         </div>
 
