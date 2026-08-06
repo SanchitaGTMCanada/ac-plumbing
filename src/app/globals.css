@@ -200,3 +200,9 @@ html {
 .swal2-popup {
   z-index: 999999 !important;
 }
+
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  background: transparent !important;
+}

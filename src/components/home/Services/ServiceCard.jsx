@@ -26,7 +26,7 @@ export default function ServiceCard({ service, index }) {
         flex-col
         overflow-hidden
         rounded-[32px]
-        bg-white
+        bg-transparent
         shadow-[0_20px_60px_rgba(0,0,0,.06)]
         transition-all
         duration-500
@@ -192,9 +192,7 @@ export default function ServiceCard({ service, index }) {
     rounded-3xl
     border
     border-[#123B67]/10
-    bg-gradient-to-br
-    from-[#F8FAFC]
-    to-white
+   bg-transparent
     p-6
     shadow-sm
     transition-all
