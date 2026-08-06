@@ -11,28 +11,17 @@ export default function CareerField({
     <div className="w-full">
       {/* Label */}
 
-      <label
-        className="block font-semibold text-[#123B67]"
-        style={{
-          marginBottom: "10px",
-          fontSize: "15px",
-        }}
-      >
+      <label className="mb-2 block text-[14px] font-semibold text-[#123B67] sm:text-[15px]">
         {label}
       </label>
 
-      {/* Field */}
+      {/* Input Wrapper */}
 
-      <div
-        className="relative"
-        style={{
-          marginBottom: error ? "6px" : "0",
-        }}
-      >
+      <div className="relative">
         {/* Icon */}
 
         <div
-          className="
+          className={`
             absolute
             z-10
             flex
@@ -42,21 +31,24 @@ export default function CareerField({
             border
             border-[#E9EEF5]
             bg-[#F7F8FC]
+            pointer-events-none
             transition-all
             duration-300
-          "
-          style={{
-            left: "15px",
-            top: textarea ? "18px" : "50%",
-            transform: textarea ? "none" : "translateY(-50%)",
-            width: "40px",
-            height: "40px",
-            pointerEvents: "none",
-          }}
+
+            left-3
+            sm:left-4
+
+            w-9
+            h-9
+            sm:w-10
+            sm:h-10
+
+            ${textarea ? "top-4 sm:top-[18px]" : "top-1/2 -translate-y-1/2"}
+          `}
         >
           <Icon
-            size={18}
-            color="#123B67"
+            className="text-[#123B67]"
+            size={16}
           />
         </div>
 
@@ -66,13 +58,7 @@ export default function CareerField({
       {/* Error */}
 
       {error && (
-        <p
-          className="font-medium text-red-600"
-          style={{
-            marginTop: "6px",
-            fontSize: "13px",
-          }}
-        >
+        <p className="mt-2 text-[12px] font-medium text-red-600 sm:text-[13px]">
           {error}
         </p>
       )}

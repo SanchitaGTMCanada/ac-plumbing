@@ -7,7 +7,7 @@ import { IoClose } from "react-icons/io5";
 import { HiPhone, HiArrowUpRight } from "react-icons/hi2";
 import navigation from "@/data/navigation";
 
-export default function MobileMenu({ open, onClose }) {
+export default function MobileMenu({ open, onClose ,  onCareerClick,}) {
   const handleNavigation = (e, href) => {
     e.preventDefault();
 
@@ -92,55 +92,97 @@ export default function MobileMenu({ open, onClose }) {
               className="flex flex-col px-8 pb-8"
               style={{ padding: "20px" }}
             >
-              <nav>
-                <ul
-                  className="space-y-6"
-                  style={{ marginBottom: "20px" }}
-                >
-                                  {navigation.map((item, index) => (
-                  <motion.li
-                    key={item.title}
-                    initial={{ opacity: 0, x: 40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      delay: 0.1 + index * 0.08,
-                    }}
-                  >
-                    <Link
-                      href={item.href}
-                      onClick={(e) => handleNavigation(e, item.href)}
-                      className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/10 px-5 py-4 text-[24px] font-semibold text-[#FFE9A8] backdrop-blur-xl transition-all duration-300 hover:border-[#F4C46A]/40 hover:bg-white/20 hover:text-[#F4C46A]"
-                      style={{
-                        padding: "5px 20px",
-                        marginBottom: "10px",
-                      }}
-                    >
-                      <span
-                        className="font-semibold text-transparent bg-clip-text bg-[length:200%_100%] animate-gradient-x"
-                        style={{
-                          backgroundImage:
-                            "linear-gradient(90deg, #FFF8D5, #F4C46A, #FFE9A8, #FFF8D5)",
-                        }}
-                      >
-                        {item.title}
-                      </span>
+          <nav>
+  <ul
+    className="space-y-6"
+    style={{ marginBottom: "20px" }}
+  >
+    {navigation.map((item, index) => (
+      <motion.li
+        key={item.title}
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.1 + index * 0.08,
+        }}
+      >
+        {item.title === "Careers" ? (
+          <button
+            type="button"
+            onClick={() => {
+              onClose();
 
-                      <motion.span
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{
-                          repeat: Infinity,
-                          duration: 1.3,
-                          ease: "easeInOut",
-                        }}
-                        className="text-xl text-[#F4C46A]"
-                      >
-                        →
-                      </motion.span>
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
-            </nav>
+              setTimeout(() => {
+                onCareerClick?.();
+              }, 250);
+            }}
+            className="group flex w-full items-center justify-between rounded-2xl border border-white/10 bg-white/10 px-5 py-4 text-[24px] font-semibold text-[#FFE9A8] backdrop-blur-xl transition-all duration-300 hover:border-[#F4C46A]/40 hover:bg-white/20 hover:text-[#F4C46A]"
+            style={{
+              padding: "5px 20px",
+              marginBottom: "10px",
+            }}
+          >
+            <span
+              className="font-semibold text-transparent bg-clip-text bg-[length:200%_100%] animate-gradient-x"
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg,#FFF8D5,#F4C46A,#FFE9A8,#FFF8D5)",
+              }}
+            >
+              {item.title}
+            </span>
+
+            <motion.span
+              animate={{ x: [0, 5, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.3,
+                ease: "easeInOut",
+              }}
+              className="text-xl text-[#F4C46A]"
+            >
+              →
+            </motion.span>
+          </button>
+        ) : (
+          <Link
+            href={item.href}
+            onClick={(e) =>
+              handleNavigation(e, item.href)
+            }
+            className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/10 px-5 py-4 text-[24px] font-semibold text-[#FFE9A8] backdrop-blur-xl transition-all duration-300 hover:border-[#F4C46A]/40 hover:bg-white/20 hover:text-[#F4C46A]"
+            style={{
+              padding: "5px 20px",
+              marginBottom: "10px",
+            }}
+          >
+            <span
+              className="font-semibold text-transparent bg-clip-text bg-[length:200%_100%] animate-gradient-x"
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg,#FFF8D5,#F4C46A,#FFE9A8,#FFF8D5)",
+              }}
+            >
+              {item.title}
+            </span>
+
+            <motion.span
+              animate={{ x: [0, 5, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.3,
+                ease: "easeInOut",
+              }}
+              className="text-xl text-[#F4C46A]"
+            >
+              →
+            </motion.span>
+          </Link>
+        )}
+      </motion.li>
+    ))}
+  </ul>
+</nav>
 
             {/* CTA */}
 

@@ -55,8 +55,8 @@ export default function Header() {
           <div
             className={`
               flex items-center justify-between
-              lg:grid lg:grid-cols-[380px_1fr_260px]
-              min-h-[120px]
+              lg:grid lg:grid-cols-[280px_1fr_220px]
+              min-h-[100px]
               px-4 lg:px-8
               rounded-2xl
               transition-all
@@ -70,7 +70,12 @@ export default function Header() {
             style={{ paddingLeft: "20px", paddingRight: "20px" }}
           >
             {/* Logo */}
-            <div className="flex h-full items-center flex-shrink-0">
+            <div
+  className="flex h-full items-center flex-shrink-0"
+  style={{
+    maxWidth: "260px",
+  }}
+>
               <Link
                 href="#home"
                 onClick={(e) => handleNavigation(e, "#home")}
@@ -185,6 +190,7 @@ export default function Header() {
       <MobileMenu
         open={open}
         onClose={() => setOpen(false)}
+        onCareerClick={() => setCareerOpen(true)}
       />
       <CareerModal
   open={careerOpen}
