@@ -22,7 +22,7 @@ import {
 import { IoClose } from "react-icons/io5";
 
 import Swal from "sweetalert2";
-import "sweetalert2/dist/sweetalert2.min.css";
+// import "sweetalert2/dist/sweetalert2.min.css";
 
 const initialForm = {
   fullName: "",
